@@ -23,28 +23,25 @@ export default function HeroSection() {
 
             {/* Content Container */}
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center -mt-12">
-                <div className="space-y-12">
+                <div>
                     {/* Main Headline - Large and impactful */}
                     <div className="space-y-8">
-                        <h1 className="flex items-center !text-white flex-col !font-bold text-6xl md:text-8xl leading-none text-center max-w-6xl mx-auto tracking-tight">
-                            BUILD YOUR
+                        <h1 className="flex items-center !text-white flex-col !font-bold text-6xl md:text-[7rem] leading-none text-center max-w-6xl mx-auto tracking-tight">
+                            Build Your
                             <br />
                             <PointerHighlight rectangleClassName="bg-white/10 !border-white/20" pointerClassName="text-[var(--color-primary-400)]">
-                                <span className="relative text-[var(--color-primary-400)] z-10">BEST LIFE</span>
+                                <span className="relative text-[var(--color-primary-400)] z-10">Best Life</span>
                             </PointerHighlight>
                         </h1>
                     </div>
 
                     {/* Subheading with enhanced styling */}
-                    <div className="space-y-5 max-w-5xl mx-auto text-white/80">
-                        <p className="text-2xl md:text-3xl font-medium leading-tight text-center">
-                            Through curated events, career connections, and powerful community.
-                        </p>
-                        <p className="text-2xl md:text-3xl  font-medium leading-tight text-center">Your new circle starts here.</p>
+                    <div className="space-y-5 max-w-5xl mx-auto text-white/90 mt-11">
+                        <p className="text-2xl leading-tight text-center">Through curated events, career connections, and powerful community.</p>
+                        <p className="text-2xl leading-tight text-center">Your new circle starts here.</p>
                     </div>
 
-                    {/* Enhanced CTA Section */}
-                    <div className="pt-3">
+                    <div className="mt-14">
                         <Button
                             size="lg"
                             className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)] px-10 py-4 text-lg font-semibold rounded-xl"
