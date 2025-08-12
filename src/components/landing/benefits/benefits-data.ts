@@ -16,43 +16,43 @@ export interface FeatureData {
 export const benefitsData: BenefitData[] = [
     {
         icon: Users,
-        title: 'Exclusive Events',
-        description: 'From penthouse mixers to private yacht brunches — access 8–12 curated experiences monthly using our credit system.',
-        tagline: 'ClassPass meets your dream mentor group',
+        title: 'BB CIRCUIT: SOCIAL + STRATEGIC EVENTS',
+        description: 'Use your credits to unlock 8–12 curated experiences per month: Rooftop happy hours & sculpting workouts, networking dinners with founders, finance & business talks, wellness & mindfulness sessions.',
+        tagline: 'Think: ClassPass meets your dream mentor group',
     },
     {
         icon: Globe,
-        title: 'Private Network',
-        description: 'Connect with women who get you in a curated digital space. Filter by industry, join subgroups, chat directly.',
-        tagline: 'LinkedIn meets your inner circle',
+        title: 'DIGITAL PLATFORM: YOUR PRIVATE NETWORK',
+        description: 'Connect with women who get you in a safe, curated space. Create member profiles, filter by job title and goals, direct chat, discover likeminded women, join subgroups, community forum with AI bot (Brickette).',
+        tagline: 'Think: LinkedIn meets Reddit meets your group chat',
     },
     {
         icon: Gift,
-        title: 'Premium Perks',
-        description: "Hundreds in monthly value: fitness classes, dining discounts, business tools, and VIP access to Miami's best.",
-        tagline: 'Amex perks for your Miami lifestyle',
+        title: 'PERKS: GIFTS, DEALS & PRIORITY ACCESS',
+        description: 'Unlock hundreds in local & national value each month. Fitness passes, dining discounts, business tools, beauty packages, BB collab opportunities.',
+        tagline: 'Think: American Express perks, but made for your Miami lifestyle',
     },
 ]
 
 export const featuresData: FeatureData[] = [
     {
         icon: Target,
-        title: 'Find Your Circle',
-        description: 'Connect with mentors and future cofounders who share your ambition.',
+        title: 'Find a mentor',
+        description: 'Connect with experienced women who\'ve been where you are.',
     },
     {
         icon: TrendingUp,
-        title: 'Build Your Brand',
-        description: 'Grow alongside women who genuinely want to see you succeed.',
+        title: 'Meet future cofounders',
+        description: 'Build your next venture with ambitious, like-minded women.',
     },
     {
         icon: DollarSign,
-        title: 'Level Up Financially',
-        description: 'Get your finances right with guidance from successful peers.',
+        title: 'Get your finances right',
+        description: 'Learn from peers who have mastered money management.',
     },
     {
         icon: Zap,
-        title: 'Strategic Advantage',
-        description: "Access opportunities that aren't available anywhere else.",
+        title: 'Build your brand',
+        description: 'Grow with women who want to see you win.',
     },
 ]

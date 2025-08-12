@@ -2,6 +2,7 @@
 
 import HeroSection from './hero-section'
 import { Benefits } from './benefits'
+import { Membership } from './membership'
 
 /**
  * Main Landing Page Component for BB Membership
@@ -12,6 +13,7 @@ export default function LandingPage() {
         <main className="min-h-screen">
             <HeroSection />
             <Benefits />
+            <Membership />
         </main>
     )
 }

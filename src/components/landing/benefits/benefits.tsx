@@ -10,11 +10,14 @@ export function Benefits() {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-6xl font-serif font-bold text-neutral-800 mb-8 tracking-tight leading-tight">
-                        Beyond networking —<span className="block text-[var(--color-primary-400)]">we&apos;re building legacies</span>
+                        THIS ISN'T JUST A MEMBERSHIP.
+                        <span className="block text-[var(--color-primary-400)]">IT'S YOUR ADVANTAGE.</span>
                     </h2>
                     <p className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed mb-12">
-                        The Brickell Babes is the ultimate platform for ambitious women who want it all: community, opportunity, and connection that
-                        transforms careers and lives.
+                        The Brickell Babes is the ultimate platform for ambitious, socially curious women who want it all: community, opportunity, and connection.
+                    </p>
+                    <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                        Whether you're launching your brand, changing careers, or simply looking to level up your circle, this is where high-vibe friendships and strategic networking meet.
                     </p>
                 </div>
 
@@ -34,10 +37,12 @@ export function Benefits() {
                 {/* CTA Section */}
                 <div className="bg-neutral-800 p-16 rounded-3xl relative overflow-hidden">
                     <div className="max-w-4xl mx-auto text-center relative z-10">
-                        <h3 className="text-4xl md:text-5xl font-serif font-bold text-neutral-100 mb-8 leading-tight tracking-tight">
-                            Your circle defines your future.
-                            <span className="block text-[var(--color-primary-400)]">Make it extraordinary.</span>
+                        <h3 className="text-4xl md:text-5xl font-serif font-bold text-neutral-100 mb-6 leading-tight tracking-tight">
+                            LEVEL UP YOUR NETWORK
                         </h3>
+                        <p className="text-xl text-neutral-300 mb-10">
+                            We're not just brunch and beach days. BB is your unfair advantage.
+                        </p>
 
                         {/* Features Grid */}
                         <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -48,7 +53,7 @@ export function Benefits() {
 
                         {/* CTA Button */}
                         <Button size="xl" className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]">
-                            Join the Waitlist
+                            Explore Member Benefits
                         </Button>
                     </div>
                 </div>
