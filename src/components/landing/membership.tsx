@@ -67,7 +67,7 @@ export function Membership() {
                         return (
                             <div
                                 key={index}
-                                className={`relative p-8 rounded-3xl border transition-all duration-300 hover:scale-[1.02] ${
+                                className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 hover:scale-[1.02] h-full ${
                                     tier.popular ? 'border-[var(--color-primary-500)] bg-white' : 'border-stone-200 bg-white hover:border-stone-300'
                                 }`}
                             >
@@ -80,7 +80,7 @@ export function Membership() {
                                     </div>
                                 )}
 
-                                <div className="text-center">
+                                <div className="flex flex-col flex-1 text-center">
                                     {/* Icon */}
                                     <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-6 mx-auto ${tier.color}`}>
                                         <IconComponent className={`w-10 h-10 ${tier.popular ? 'text-white' : tier.textColor}`} />
@@ -88,7 +88,7 @@ export function Membership() {
 
                                     {/* Tier Name & Description */}
                                     <h3 className="text-2xl font-serif font-medium mb-2 text-stone-800">{tier.name}</h3>
-                                    <p className="text-sm text-stone-500 mb-6 font-light">{tier.description}</p>
+                                    <p className="text-sm text-stone-500 mb-6 font-light h-10">{tier.description}</p>
 
                                     {/* Pricing */}
                                     <div className="mb-6">
@@ -107,7 +107,7 @@ export function Membership() {
                                     </div>
 
                                     {/* Features */}
-                                    <ul className="space-y-4 mb-8 text-left">
+                                    <ul className="space-y-3 mb-8 text-left flex-1 min-h-[80px]">
                                         {tier.features.map((feature, idx) => (
                                             <li key={idx} className="text-sm flex items-start gap-3 text-stone-600">
                                                 <Check className="w-5 h-5 flex-shrink-0 text-[var(--color-primary-400)] mt-0.5" />
@@ -118,7 +118,7 @@ export function Membership() {
 
                                     {/* CTA Button */}
                                     <Button
-                                        className={`w-full py-4 rounded-2xl font-medium text-base transition-all duration-300 ${
+                                        className={`w-full py-4 rounded-2xl font-medium text-base transition-all duration-300 mt-auto ${
                                             tier.popular
                                                 ? 'bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]'
                                                 : 'bg-stone-800 text-white hover:bg-stone-700'
