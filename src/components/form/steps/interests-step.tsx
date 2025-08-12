@@ -190,12 +190,12 @@ export default function InterestsStep() {
           <div className="text-2xl">✨</div>
           <div>
             <h4 className="font-medium text-text-primary mb-2">
-              You're Almost Part of Something Amazing
+              You&apos;re Almost Part of Something Amazing
             </h4>
             <p className="text-sm text-text-secondary">
-              Based on your interests, you'll be connected with like-minded women who share your 
+              Based on your interests, you&apos;ll be connected with like-minded women who share your 
               passions for personal growth, professional development, and building meaningful 
-              relationships in Miami's vibrant community.
+              relationships in Miami&apos;s vibrant community.
             </p>
           </div>
         </div>

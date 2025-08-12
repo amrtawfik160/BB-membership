@@ -218,7 +218,7 @@ export default function PaymentStep() {
               Have a Referral Code?
             </h4>
             <p className="text-xs text-purple-700 mb-3">
-              Enter a friend's referral code to move up in line together!
+              Enter a friend&apos;s referral code to move up in line together!
             </p>
             <div className="relative">
               <input
@@ -356,8 +356,8 @@ export default function PaymentStep() {
               .
             </span>
             <span className="text-xs text-text-muted">
-              By providing your payment method, you're securing your position in the waitlist. 
-              If accepted, you'll be charged the membership fee. No commitment required to join the waitlist.
+              By providing your payment method, you&apos;re securing your position in the waitlist. 
+              If accepted, you&apos;ll be charged the membership fee. No commitment required to join the waitlist.
             </span>
           </label>
         </div>

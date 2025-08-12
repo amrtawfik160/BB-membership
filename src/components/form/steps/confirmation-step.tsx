@@ -92,7 +92,7 @@ export default function ConfirmationStep() {
           Welcome to BB Membership! 🌸
         </h2>
         <p className="text-xl text-text-secondary mb-6">
-          Your spot is secured! We'll be in touch soon with next steps.
+          Your spot is secured! We&apos;ll be in touch soon with next steps.
         </p>
       </div>
 
@@ -107,10 +107,10 @@ export default function ConfirmationStep() {
         </div>
         
         <h3 className="text-2xl font-bold text-purple-900 mb-2">
-          You're Position #{userWaitlistPosition}!
+          You&apos;re Position #{userWaitlistPosition}!
         </h3>
         <p className="text-purple-700 mb-6">
-          We'll notify you as spots become available. Keep an eye on your inbox for updates.
+          We&apos;ll notify you as spots become available. Keep an eye on your inbox for updates.
         </p>
         
         <div className="bg-white p-4 rounded-xl">
@@ -140,7 +140,7 @@ export default function ConfirmationStep() {
           Share & Move Up Together
         </h3>
         <p className="text-brand-primary-dark mb-6">
-          Invite friends to join and you'll both move up in line! Your unique referral code:
+          Invite friends to join and you&apos;ll both move up in line! Your unique referral code:
         </p>
         
         <div className="bg-white p-4 rounded-xl mb-6">
@@ -217,7 +217,7 @@ export default function ConfirmationStep() {
               <span className="text-xs font-bold text-brand-primary">1</span>
             </div>
             <p className="text-sm text-text-secondary">
-              We'll review your application and may reach out with follow-up questions
+              We&apos;ll review your application and may reach out with follow-up questions
             </p>
           </div>
           <div className="flex items-start">
@@ -225,7 +225,7 @@ export default function ConfirmationStep() {
               <span className="text-xs font-bold text-brand-primary">2</span>
             </div>
             <p className="text-sm text-text-secondary">
-              If accepted, you'll receive an invitation email with membership details
+              If accepted, you&apos;ll receive an invitation email with membership details
             </p>
           </div>
           <div className="flex items-start">

@@ -37,7 +37,7 @@ export default function PersonalInfoStep() {
           Tell Us About Yourself
         </h3>
         <p className="text-text-secondary">
-          Let's start with some basic information to get to know you better.
+          Let&apos;s start with some basic information to get to know you better.
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export default function PersonalInfoStep() {
           <p className="mt-1 text-sm text-error">{getFieldError('email')}</p>
         )}
         <p className="mt-1 text-xs text-text-muted">
-          We'll use this to send you important updates about your membership.
+          We&apos;ll use this to send you important updates about your membership.
         </p>
       </div>
 
