@@ -1,0 +1,445 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Project Initialization and Theming Setup",
+        "description": "Configure the Next.js project with the required dependencies and set up the visual theme according to the PRD specifications.",
+        "details": "Install Stripe's Node.js and React libraries. Configure `tailwind.config.ts` to include the brand's color palette (#FF6B9D, #F8F9FA, #2D3436, etc.) and typography (Inter/Poppins fonts). Set up global CSS in `app/layout.tsx` to apply the base text color and background.",
+        "testStrategy": "Verify that `npm install` or `yarn add` completes successfully for `@stripe/stripe-js` and `@stripe/react-stripe-js`. Run the dev server and inspect the page to confirm that the new Tailwind colors are available and the default font has been updated.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Implement User Database Schema",
+            "description": "Create the necessary database table(s) to store user information, including credentials and profile data.",
+            "dependencies": [],
+            "details": "The 'users' table should include columns for 'id' (primary key), 'username' (unique), 'email' (unique), 'hashed_password' (string), 'created_at', and 'updated_at'. Use a database migration tool to apply the schema changes.",
+            "status": "done",
+            "testStrategy": "Verify the table and columns are created correctly in the development database. Write unit tests for the User model to ensure data validation rules (e.g., unique constraints, email format) are enforced."
+          },
+          {
+            "id": 2,
+            "title": "Develop API Endpoints for User Registration and Login",
+            "description": "Create the backend API endpoints for user registration (`POST /api/auth/register`) and user login (`POST /api/auth/login`).",
+            "dependencies": [],
+            "details": "The registration endpoint should accept username, email, and password, hash the password using a strong algorithm like bcrypt, and save the new user. The login endpoint should validate credentials and return a JSON Web Token (JWT) upon success.",
+            "status": "done",
+            "testStrategy": "Write integration tests for both endpoints. Test successful registration, duplicate username/email errors, successful login with correct credentials, and failed login with incorrect credentials. Validate the structure and signature of the returned JWT."
+          },
+          {
+            "id": 3,
+            "title": "Implement Middleware for Authenticated Routes",
+            "description": "Create a middleware function to protect specific API routes, ensuring they can only be accessed by users with a valid JWT.",
+            "dependencies": [],
+            "details": "The middleware should extract the JWT from the 'Authorization' header (e.g., 'Bearer <token>'), verify its signature and expiration, and decode it to identify the user. If the token is valid, attach the user's ID to the request object. If invalid, return a 401 Unauthorized error.",
+            "status": "done",
+            "testStrategy": "Create a protected test route. Write integration tests to verify that requests with a valid token are allowed, while requests with no token, an invalid token, or an expired token are rejected with the correct 401 status code and error message."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Set Up Supabase Database Schema",
+        "description": "Create the necessary tables and relationships in the Supabase database as defined in the PRD.",
+        "details": "Using the Supabase SQL editor or migrations, create the `users` and `referrals` tables. Ensure all columns, types, constraints (NOT NULL, UNIQUE), and foreign key relationships are implemented exactly as specified in the PRD. Enable Row Level Security (RLS) on both tables for security.",
+        "testStrategy": "Connect to the Supabase database and verify that both tables exist with the correct schema. Attempt to insert sample data to ensure constraints and relationships work as expected. Write initial RLS policies and test them using Supabase's user impersonation feature.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Implement User Authentication Database Schema",
+            "description": "Create the necessary database tables and corresponding application models to store user information, including credentials and profile data.",
+            "dependencies": [],
+            "details": "Define a 'users' table with columns for id, email (unique), password_hash, created_at, and updated_at. Use a database migration tool (e.g., Alembic, Flyway) to create and manage the schema. Implement the corresponding User model in the application's ORM.",
+            "status": "done",
+            "testStrategy": "Write unit tests to verify the User model's constraints (e.g., unique email). Test the database migration scripts to ensure they can be applied and reverted successfully."
+          },
+          {
+            "id": 2,
+            "title": "Develop User Registration API Endpoint",
+            "description": "Create a public API endpoint (e.g., POST /api/auth/register) that allows new users to create an account by providing their email and password.",
+            "dependencies": [],
+            "details": "The endpoint should validate incoming data (e.g., valid email format, strong password policy). It must hash the password using a strong, salted algorithm like bcrypt before storing it. On success, it should return a 201 Created status. Handle error cases like duplicate email addresses.",
+            "status": "done",
+            "testStrategy": "Write integration tests to cover successful registration, registration with a duplicate email, and registration with invalid data (e.g., weak password, invalid email). Verify that the password stored in the database is a hash, not plaintext."
+          },
+          {
+            "id": 3,
+            "title": "Implement User Login and JWT Generation",
+            "description": "Create a login endpoint (e.g., POST /api/auth/login) that authenticates users with their email and password and issues a JSON Web Token (JWT) upon success.",
+            "dependencies": [],
+            "details": "The endpoint should find the user by email, verify the provided password against the stored hash using the same hashing algorithm. If credentials are valid, generate a signed JWT containing the user ID, role, and an expiration claim. Return the JWT in the response body.",
+            "status": "done",
+            "testStrategy": "Write integration tests for successful login with correct credentials and failed login attempts with incorrect passwords or non-existent emails. Verify the structure and signature of the generated JWT."
+          },
+          {
+            "id": 4,
+            "title": "Create Middleware for Protected Route Authentication",
+            "description": "Implement middleware to secure specific API routes, ensuring they are only accessible to authenticated users with a valid JWT.",
+            "dependencies": [],
+            "details": "The middleware should extract the JWT from the 'Authorization: Bearer <token>' header. It must verify the token's signature and check for expiration. If the token is valid, decode the payload to identify the user and attach the user's information to the request context for use by the route handler. If invalid, return a 401 Unauthorized error.",
+            "status": "done",
+            "testStrategy": "Create a sample protected endpoint and write integration tests. Test access with a valid token, an expired token, a malformed token, and no token at all. Assert that the correct HTTP status codes are returned and that user data is available in the request context on success."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Build Static Landing Page Sections",
+        "description": "Implement the static, non-interactive sections of the landing page: Hero, Benefits, Membership Tiers, and Footer.",
+        "details": "Create reusable React components for each section. Use the theme variables defined in Task 1. The layout should follow the `Hero -> Benefits -> Tiers -> Form -> Footer` structure. Ensure the design is responsive and mobile-first, matching the clean, soft aesthetic.",
+        "testStrategy": "Visually inspect the rendered page on desktop and mobile viewports to ensure it matches the design specifications. Check for responsiveness, correct color and font usage, and proper layout flow. Use browser developer tools to confirm the HTML structure is semantic.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Set Up User Authentication Database Schema",
+            "description": "Create the necessary database tables to store user information, including credentials, profiles, and session tokens.",
+            "dependencies": [],
+            "details": "Define a `users` table with columns for `id`, `email` (unique), `password_hash`, `created_at`, and `updated_at`. Use a database migration tool like Alembic or Flyway to version control and apply the schema changes.",
+            "status": "done",
+            "testStrategy": "Write a unit test for the migration script to ensure it runs successfully and creates the expected tables and columns. Manually inspect the database schema after running the migration to confirm its structure."
+          },
+          {
+            "id": 2,
+            "title": "Develop API Endpoints for User Registration and Login",
+            "description": "Create the backend API endpoints for new user registration (`/api/auth/register`) and existing user login (`/api/auth/login`).",
+            "dependencies": [],
+            "details": "The registration endpoint should validate input, hash the password using bcrypt, and store the new user. The login endpoint should verify credentials and, upon success, generate a secure JWT. Implement robust error handling for cases like duplicate emails or incorrect passwords.",
+            "status": "done",
+            "testStrategy": "Write integration tests for both endpoints. Test successful registration and login flows. Also, test failure scenarios such as submitting invalid data, duplicate user registration, and login attempts with incorrect credentials."
+          },
+          {
+            "id": 3,
+            "title": "Implement Middleware for Authenticated Routes",
+            "description": "Create a middleware function that protects specific API routes, ensuring they can only be accessed by users with a valid JSON Web Token (JWT).",
+            "dependencies": [],
+            "details": "The middleware should extract the JWT from the `Authorization` header. It must then validate the token's signature and expiration. If valid, attach the user's identity to the request object. If invalid, it must return a `401 Unauthorized` status code.",
+            "status": "done",
+            "testStrategy": "Create a protected test endpoint. Write integration tests to verify that requests with a valid token are allowed, while requests with an invalid, expired, or missing token are rejected with a 401 error."
+          },
+          {
+            "id": 4,
+            "title": "Create Frontend UI for Login and Registration Forms",
+            "description": "Build the user interface components for the login and registration pages, including forms, input validation, and user feedback mechanisms.",
+            "dependencies": [],
+            "details": "Using a framework like React or Vue, create forms for login and registration. Implement client-side validation for immediate feedback. On submission, call the backend API endpoints. Handle API responses to display success/error messages and store the JWT securely upon successful login.",
+            "status": "done",
+            "testStrategy": "Use component tests (e.g., Jest/RTL) to verify form rendering and validation logic. Conduct end-to-end tests (e.g., Cypress) to simulate the full user flow of registering a new account and then logging in."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Multi-Step Form State Management with Zustand",
+        "description": "Set up a global state store using Zustand to manage the data and current step of the multi-step form.",
+        "details": "Create a Zustand store to hold all form fields (first_name, email, interests, etc.). The store should also manage the current step index (e.g., 0 for Step 1). Implement actions to update form data and to navigate to the next/previous step. Add logic to persist form data to `localStorage` to meet the 'save progress' requirement.",
+        "testStrategy": "Use React Developer Tools to inspect the Zustand store's state. Verify that inputting data into form fields updates the store correctly. Test that navigating between steps updates the step index. Close and reopen the browser tab to ensure form data is successfully restored from `localStorage`.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Develop User Registration API Endpoint",
+            "description": "Create a public API endpoint for new users to register. This involves creating the user model, database schema, and the registration logic.",
+            "dependencies": [],
+            "details": "Implement a POST endpoint at `/api/auth/register`. It should accept `username`, `email`, and `password`. The password must be securely hashed using bcrypt before storing it in the 'users' table. Perform validation to ensure the email is unique and the password meets complexity requirements. On success, return a 201 Created status.",
+            "status": "done",
+            "testStrategy": "Write unit tests for the password hashing function and email validation logic. Create integration tests to hit the endpoint with valid data, duplicate email data, and invalid password formats, asserting the correct HTTP responses and database state."
+          },
+          {
+            "id": 2,
+            "title": "Implement User Login and JWT Generation",
+            "description": "Create a login endpoint that authenticates users and issues a JSON Web Token (JWT) upon successful validation of credentials.",
+            "dependencies": [],
+            "details": "Implement a POST endpoint at `/api/auth/login`. It will accept `email` and `password`. Compare the provided password with the stored hash. If they match, generate a signed JWT containing the user's ID and role as the payload. The JWT secret key must be stored as an environment variable. Return the JWT in the response body.",
+            "status": "done",
+            "testStrategy": "Unit test the credential verification logic. Write integration tests to simulate login attempts with correct credentials (asserting a valid JWT is returned) and incorrect credentials (asserting a 401 Unauthorized response)."
+          },
+          {
+            "id": 3,
+            "title": "Create Authentication Middleware for Protected Routes",
+            "description": "Develop a middleware function that verifies the JWT from incoming requests to protect certain API routes from unauthorized access.",
+            "dependencies": [],
+            "details": "The middleware should extract the JWT from the `Authorization: Bearer <token>` header. It must verify the token's signature using the secret key and check for expiration. If the token is valid, decode the payload and attach the user's information to the request object (e.g., `req.user`). If invalid or missing, it should respond with a 401 Unauthorized error.",
+            "status": "done",
+            "testStrategy": "Create a sample protected route. Write integration tests that attempt to access this route with a valid token, an expired token, a malformed token, and no token. Verify that access is granted only for the valid token case and that appropriate error codes are returned for all other cases."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implement Multi-Step Form UI (Steps 1-3)",
+        "description": "Develop the UI components for the first three steps of the waitlist form: Personal Information, Location & Background, and Interests.",
+        "details": "Create individual components for each step. Use `shadcn/ui` components (Input, Dropdown, Checkbox) styled to match the brand aesthetic. Implement client-side validation with user-friendly error messages. Connect all inputs to the Zustand store created in Task 4. Include a progress indicator component.",
+        "testStrategy": "Manually test form functionality. Verify that all inputs update the global state. Test form validation by submitting empty or invalid data. Check that the progress indicator updates correctly when moving between steps. Ensure the UI is fully responsive.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          4
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Implement User Database Schema",
+            "description": "Create the necessary database table(s) to store user information, including credentials and profile data.",
+            "dependencies": [],
+            "details": "Define a 'users' table with columns for id (primary key), email (unique), hashed_password, first_name, last_name, created_at, and updated_at. Use a migration tool (e.g., Alembic, Flyway, Knex.js migrations) to apply the schema.",
+            "status": "done",
+            "testStrategy": "Verify the migration runs successfully against a test database. Manually inspect the schema to ensure all columns and constraints (unique, not null) are correctly defined."
+          },
+          {
+            "id": 2,
+            "title": "Implement JWT Generation and Validation Service",
+            "description": "Create a reusable service or module for generating and validating JSON Web Tokens (JWTs) for user sessions.",
+            "dependencies": [],
+            "details": "Create two functions: `generateToken(userId)` and `validateToken(token)`. The generation function should sign a payload containing the user ID and an expiration date using a secret key stored in environment variables. The validation function should verify the token's signature and check for expiration.",
+            "status": "done",
+            "testStrategy": "Write unit tests for the generation function to ensure it creates a correctly structured token. Write tests for the validation function to check for valid tokens, invalid signatures (tampered tokens), and expired tokens."
+          },
+          {
+            "id": 3,
+            "title": "Develop User Registration API Endpoint",
+            "description": "Create a public API endpoint (e.g., POST /api/users/register) that allows new users to create an account.",
+            "dependencies": [],
+            "details": "The endpoint should accept user details (email, password, name) in the request body. It must validate the input (e.g., check for valid email format, password strength). Before saving, the password must be securely hashed using a strong algorithm like bcrypt. Return a success message and user ID upon successful registration.",
+            "status": "done",
+            "testStrategy": "Write unit tests to cover successful registration, registration with a duplicate email, and registration with invalid input (e.g., weak password, bad email format). Test the API endpoint using a tool like Postman or cURL."
+          },
+          {
+            "id": 4,
+            "title": "Develop User Login API Endpoint",
+            "description": "Create a public API endpoint (e.g., POST /api/auth/login) for users to authenticate and receive an access token.",
+            "dependencies": [],
+            "details": "The endpoint should accept user credentials (email, password). It will find the user by email, compare the provided password with the stored hash using bcrypt's compare function. If credentials are valid, use the JWT service to generate a token and return it in the response.",
+            "status": "done",
+            "testStrategy": "Unit test the login logic with valid credentials, invalid password, and non-existent user email. Integration test the endpoint to ensure a valid JWT is returned upon successful login."
+          },
+          {
+            "id": 5,
+            "title": "Create Authentication Middleware for Protected Routes",
+            "description": "Implement middleware that checks for a valid JWT in the request headers and protects specific API routes from unauthorized access.",
+            "dependencies": [],
+            "details": "The middleware should extract the JWT from the 'Authorization' header (e.g., 'Bearer <token>'). It will use the JWT validation service to verify the token. If valid, it should attach the user's information (e.g., user ID from the token payload) to the request object and pass control to the next handler. If invalid, it should return a 401 Unauthorized error.",
+            "status": "done",
+            "testStrategy": "Write integration tests for a sample protected route. Test cases should include: a request with a valid token (should succeed), a request with no token (should fail with 401), and a request with an invalid/expired token (should fail with 401)."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Backend API: User Signup and Referral Code Generation",
+        "description": "Create the `POST /api/signup` endpoint to handle the initial user creation and referral code generation.",
+        "status": "done",
+        "dependencies": [
+          2,
+          5
+        ],
+        "priority": "high",
+        "details": "This API route will receive data from the first three form steps. It should validate the incoming data, generate a unique referral code (e.g., 'FIRSTNAME' + random digits), and insert a new record into the Supabase `users` table. It will return the newly created user's ID for subsequent steps.",
+        "testStrategy": "Use a tool like Postman or an integration test to send valid and invalid payloads to the endpoint. Verify that valid data creates a new user in the Supabase `users` table with a unique referral code. Check that invalid data returns appropriate error codes (e.g., 400).",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create POST /api/signup Endpoint and Input Validation",
+            "description": "Set up the basic API route handler for `POST /api/signup` and implement robust validation for all incoming data from the first three form steps.",
+            "status": "done",
+            "dependencies": [],
+            "details": "The endpoint should accept a JSON payload containing all fields from the Personal Information, Location & Background, and Interests steps. Use a validation library like Zod to define a schema and validate the request body. Ensure required fields are present and email formats are correct. Return a 400 Bad Request error with clear messages for invalid data.",
+            "testStrategy": "Create unit tests for the validation schema. Use Postman or an integration test to send various invalid payloads (missing fields, incorrect data types) and verify that the endpoint returns a 400 status code with descriptive error messages."
+          },
+          {
+            "id": 2,
+            "title": "Implement Unique Referral Code Generation Logic",
+            "description": "Develop a service to generate a unique referral code for each new user in the format 'FIRSTNAME' + 4 random digits.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "The referral code format must be the user's first name (in uppercase) followed by 4 random digits (e.g., 'JANE1234'). The generation logic must ensure uniqueness by checking against existing codes in the `users` table. Implement a retry mechanism in case of a collision.",
+            "testStrategy": "Write a unit test for the code generation function to verify the format. In an integration test, create multiple users with the same first name to ensure their generated referral codes are unique and that the collision handling works."
+          },
+          {
+            "id": 3,
+            "title": "Integrate with Supabase to Create User Record",
+            "description": "Connect the signup endpoint to Supabase to insert a new user record with all form data and the generated referral code.",
+            "status": "done",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "After successful validation and referral code generation, use the Supabase client to insert a new row into the `users` table. The record should include all data from the form, the generated `referral_code`, and an initial `referral_count` of 0. The endpoint should return the `id` of the newly created user.",
+            "testStrategy": "In an integration test, send a valid signup request. Verify that a new record is created in the Supabase `users` table. Check that all fields, including the `referral_code`, are populated correctly. Confirm the API response contains the new user's ID."
+          },
+          {
+            "id": 4,
+            "title": "Implement Initial Waitlist Position and Referral Tracking",
+            "description": "Handle incoming referral codes to track referrals and assign an initial waitlist position to the new user.",
+            "status": "done",
+            "dependencies": [
+              3
+            ],
+            "details": "Modify the endpoint to accept an optional `referred_by` code. If the code is present and valid, find the referring user, increment their `referral_count`, and log the referral in a `referrals` table. Calculate the new user's initial `waitlist_position` by counting the number of existing users.",
+            "testStrategy": "Test the signup flow with a valid `referred_by` code. Verify the referrer's `referral_count` is incremented and a new entry is created in the `referrals` table. Test with an invalid referral code and ensure it's ignored. Verify the new user gets an initial `waitlist_position` equal to the total number of users."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Backend API: Stripe Setup Intent",
+        "description": "Create the `POST /api/stripe/setup-intent` endpoint to prepare for payment method collection.",
+        "status": "done",
+        "dependencies": [
+          1,
+          6
+        ],
+        "priority": "high",
+        "details": "This route will receive the user's ID. It will first check if a `stripe_customer_id` exists for the user in Supabase. If not, it creates a new Stripe Customer and saves the ID. Then, it creates a Stripe Setup Intent for that customer and returns the `client_secret` to the frontend.",
+        "testStrategy": "Test the endpoint by sending a user ID. Verify in the Stripe Dashboard that a new Customer and Setup Intent are created. Test the case where a customer already exists to ensure a new one is not created. Ensure the endpoint returns a valid `client_secret`.",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure Stripe SDK in Next.js API Route",
+            "description": "Install the Stripe Node.js library and configure it with API keys in the Next.js environment.",
+            "status": "done",
+            "dependencies": [],
+            "details": "Add the `stripe` package to the project. Set up environment variables for Stripe's secret key (`STRIPE_SECRET_KEY`). Create a utility or a singleton instance of the Stripe client to be used across API routes.",
+            "testStrategy": "Verify that the Stripe API key is loaded correctly from environment variables. Write a simple test script or a temporary API route to make a basic, authenticated call to the Stripe API (e.g., `stripe.customers.list({ limit: 1 })`) to confirm connectivity."
+          },
+          {
+            "id": 2,
+            "title": "Create POST /api/stripe/setup-intent Endpoint and Validate User",
+            "description": "Establish the API route handler for `POST /api/stripe/setup-intent` and validate the incoming user ID.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Create the file for the API route. The handler should expect a JSON body containing a `userId`. Implement validation to ensure the `userId` is present and corresponds to an existing user in the Supabase `users` table. Return a 400 or 404 error if the user is not found.",
+            "testStrategy": "Send requests to the endpoint with a valid `userId`, an invalid `userId`, and no `userId`. Assert that the correct HTTP status codes are returned (e.g., 404 for non-existent user, 400 for missing ID)."
+          },
+          {
+            "id": 3,
+            "title": "Implement Stripe Customer Creation and Retrieval Logic",
+            "description": "Add logic to find an existing Stripe Customer or create a new one for the user, storing the ID in Supabase.",
+            "status": "done",
+            "dependencies": [
+              2
+            ],
+            "details": "Within the API route, query the Supabase `users` table for a `stripe_customer_id` associated with the `userId`. If it exists, use it. If it's null, call `stripe.customers.create` with user details (e.g., email). Update the user's record in Supabase with the newly created Stripe Customer ID.",
+            "testStrategy": "Test with a user who has no `stripe_customer_id`. Verify a new customer is created in the Stripe Dashboard and the ID is saved in Supabase. Test again with the same user to ensure a second customer is not created and the existing ID is used."
+          },
+          {
+            "id": 4,
+            "title": "Create Stripe Setup Intent and Return Client Secret",
+            "description": "Generate a Stripe Setup Intent for the customer and return its client secret to the frontend.",
+            "status": "done",
+            "dependencies": [
+              3
+            ],
+            "details": "After obtaining the Stripe Customer ID, call `stripe.setupIntents.create` with the `customer` ID. The response from Stripe will contain a `client_secret`. Return this `client_secret` in a JSON response with a 200 OK status.",
+            "testStrategy": "Call the endpoint with a valid user ID. Verify that the response body contains a `client_secret` property with a string value formatted like `seti_..._secret_...`. Check the Stripe Dashboard to confirm a new Setup Intent has been created for the correct customer."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement Form Step 4: Stripe Payment Collection",
+        "description": "Build the UI for the payment step using Stripe Elements to securely collect and save the user's payment method.",
+        "status": "done",
+        "dependencies": [
+          7
+        ],
+        "priority": "high",
+        "details": "Integrate `@stripe/react-stripe-js` to create the payment form. Use the `client_secret` from the Setup Intent API (Task 7) to initialize Stripe Elements. Upon submission, confirm the setup intent and on success, update the user's record in Supabase with the `stripe_payment_method_id` and set `payment_completed` to true.",
+        "testStrategy": "Use Stripe's test card numbers to test the payment form. Verify that a successful submission saves the payment method to the Stripe Customer in the Stripe Dashboard. Check the Supabase `users` table to confirm the `stripe_payment_method_id` and `payment_completed` fields are updated correctly.",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Setup Stripe Elements Provider in React App",
+            "description": "Wrap the multi-step form or the entire application with the Stripe `Elements` provider and initialize it with the Stripe public key.",
+            "status": "done",
+            "dependencies": [],
+            "details": "Import `Elements` from `@stripe/react-stripe-js` and `loadStripe` from `@stripe/stripe-js`. Load the Stripe instance using the publishable key from environment variables. Configure the `Elements` provider, passing the `stripe` instance and the `client_secret` from the setup intent as options.",
+            "testStrategy": "Verify that the application loads without errors. Use React DevTools to confirm the `Elements` provider is present in the component tree and has the correct props."
+          },
+          {
+            "id": 2,
+            "title": "Build Step 4 Payment Form Component",
+            "description": "Create the React component for the payment form using Stripe's `CardElement`.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Use the `useStripe` and `useElements` hooks from `@stripe/react-stripe-js`. Implement a form containing the `CardElement` for secure input of card details. Style the `CardElement` to match the brand's design. Add a submit button and fields for cardholder name if required.",
+            "testStrategy": "Render the component in Storybook or a test page. Verify that the Stripe `CardElement` renders correctly and is interactive. Check for any console errors related to Stripe Elements initialization."
+          },
+          {
+            "id": 3,
+            "title": "Implement Payment Submission and Confirmation",
+            "description": "Handle the form submission to confirm the Stripe Setup Intent and save the payment method.",
+            "status": "done",
+            "dependencies": [
+              2
+            ],
+            "details": "On form submission, call `stripe.confirmCardSetup` using the `client_secret` (fetched from the API in Task 7) and the `CardElement`. The payment details should include the user's name and email from the form state. On a successful confirmation, extract the `payment_method` ID from the response.",
+            "testStrategy": "Use Stripe's test card numbers to submit the form. Mock the API call that provides the `client_secret`. Verify that the `confirmCardSetup` method is called with the correct parameters. Check the network tab to see the request to Stripe's API."
+          },
+          {
+            "id": 4,
+            "title": "Integrate Payment Step into Multi-Step Form",
+            "description": "Connect the payment form (Step 4) into the main multi-step form flow, handling success and error states.",
+            "status": "done",
+            "dependencies": [
+              3
+            ],
+            "details": "Place the new payment component as the fourth step in the form wizard. After a successful payment method setup (from subtask 3), call a backend endpoint to update the user's record in Supabase with the `stripe_payment_method_id` and set `payment_completed` to true. On success, navigate the user to the final confirmation page (Task 9). Implement loading indicators and display clear error messages to the user if the setup fails.",
+            "testStrategy": "Perform a full end-to-end test of the multi-step form through Step 4. Use a test card to complete the payment step. Verify that on success, the user is redirected to the confirmation page. Test failure scenarios (e.g., invalid card number) and confirm that an appropriate error message is displayed without advancing the form."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Implement Confirmation & Referral Share Page (Step 5)",
+        "description": "Create the final confirmation page that displays the user's waitlist position and referral information.",
+        "details": "Create a new page (e.g., `/welcome`) that the user is redirected to after successful payment setup. This page should fetch the user's data, including their `waitlist_position` and `referral_code`. Implement the UI based on the PRD's dashboard design, including a 'Copy Link' button and social sharing buttons with pre-populated messages.",
+        "testStrategy": "Complete the entire signup flow and verify redirection to the welcome page. Check that the correct waitlist position and referral code are displayed. Test the 'Copy Link' functionality and click the social sharing buttons to ensure they generate the correct links/messages.",
+        "priority": "medium",
+        "dependencies": [
+          8
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Implement Referral Tracking Logic",
+        "description": "Develop the backend logic to track referrals and adjust waitlist positions.",
+        "details": "Modify the `POST /api/signup` endpoint to check for a `referred_by` code in the request. If present and valid, find the referrer, increment their `referral_count`, and create a record in the `referrals` table. Create a database function or a scheduled job to periodically recalculate `waitlist_position` based on `created_at` and `referral_count`.",
+        "testStrategy": "Test the signup flow with a referral code. Verify that the `referrals` table gets a new entry and the referrer's `referral_count` is incremented. Manually trigger the position recalculation logic and verify that users with more referrals move up in the `waitlist_position`.",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          9
+        ],
+        "status": "done",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-08-11T13:13:27.864Z",
+      "updated": "2025-08-11T14:36:30.510Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

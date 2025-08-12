@@ -1,0 +1,93 @@
+{
+	"meta": {
+		"generatedAt": "2025-08-11T13:15:04.449Z",
+		"tasksAnalyzed": 10,
+		"totalTasks": 10,
+		"analysisCount": 10,
+		"thresholdScore": 5,
+		"projectName": "Taskmaster",
+		"usedResearch": false
+	},
+	"complexityAnalysis": [
+		{
+			"taskId": 1,
+			"taskTitle": "Project Initialization and Theming Setup",
+			"complexityScore": 2,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down the setup of project theming and dependencies. Create subtasks for: 1. Installing the required Stripe npm packages (`@stripe/stripe-js`, `@stripe/react-stripe-js`, `stripe`). 2. Updating `tailwind.config.ts` to extend the theme with the brand's color palette and font families. 3. Modifying `app/globals.css` and `app/layout.tsx` to apply the base background color, text color, and primary font.",
+			"reasoning": "Codebase analysis shows a barebones Next.js project. The required files (`tailwind.config.ts`, `package.json`, `app/layout.tsx`) exist but are in their default state. This task involves standard configuration and dependency installation with no complex logic or refactoring, making it low complexity."
+		},
+		{
+			"taskId": 2,
+			"taskTitle": "Set Up Supabase Database Schema",
+			"complexityScore": 5,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Decompose the setup of the Supabase database schema. Create subtasks for: 1. Defining and creating the `users` table with all specified columns and constraints. 2. Defining and creating the `referrals` table. 3. Establishing the foreign key relationship between `users` and `referrals`. 4. Implementing Row Level Security (RLS) policies for both tables to restrict data access.",
+			"reasoning": "The codebase has no Supabase integration or migration files. This is a greenfield database setup. While creating tables is straightforward, correctly implementing Row Level Security policies requires careful planning and SQL knowledge, which elevates the complexity beyond a simple setup task."
+		},
+		{
+			"taskId": 3,
+			"taskTitle": "Build Static Landing Page Sections",
+			"complexityScore": 4,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the implementation of the static landing page. Create a separate subtask for building each of the following responsive React components: 1. Hero section. 2. Benefits section. 3. Membership Tiers section. 4. Footer section. Ensure all components utilize the theme variables defined in Task 1.",
+			"reasoning": "Analysis of `app/page.tsx` shows only boilerplate content, and no components for these sections exist. This is greenfield UI development. The complexity is moderate as it involves creating four distinct, responsive components. The existence of `shadcn/ui` primitives (button, input) simplifies the work, preventing a higher score."
+		},
+		{
+			"taskId": 4,
+			"taskTitle": "Multi-Step Form State Management with Zustand",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Decompose the creation of the Zustand store for the multi-step form. Create subtasks for: 1. Defining the store's state shape, including all form fields and the current step index. 2. Implementing the store's actions for updating field values and navigating between steps. 3. Integrating the `persist` middleware to save the form state to `localStorage` and handle rehydration.",
+			"reasoning": "The codebase contains no `store/` directory or any existing state management. This task is greenfield. Complexity is moderate because it involves designing the central state structure for a key application feature, including actions and side effects like `localStorage` persistence, which requires careful implementation."
+		},
+		{
+			"taskId": 5,
+			"taskTitle": "Implement Multi-Step Form UI (Steps 1-3)",
+			"complexityScore": 7,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down the development of the multi-step form UI. Create subtasks for: 1. Building the main form container component that conditionally renders steps based on the Zustand store. 2. Implementing the UI and validation for 'Step 1: Personal Information'. 3. Implementing the UI and validation for 'Step 2: Location & Background'. 4. Implementing the UI and validation for 'Step 3: Interests'. 5. Creating the shared progress indicator component.",
+			"reasoning": "No form components exist in the codebase. This is a large, greenfield UI task. The complexity is high because it requires building multiple complex components, integrating them with the global Zustand store (Task 4), implementing robust client-side validation, and managing conditional rendering logic."
+		},
+		{
+			"taskId": 6,
+			"taskTitle": "Backend API: User Signup and Referral Code Generation",
+			"complexityScore": 6,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Decompose the creation of the user signup API endpoint. Create subtasks for: 1. Setting up the `POST /api/signup` API route handler. 2. Implementing server-side data validation for the incoming form data. 3. Integrating the Supabase client to insert the new user record into the `users` table. 4. Creating and implementing the logic to generate a unique referral code for the new user.",
+			"reasoning": "The codebase has a generic `app/api/[[...route]]/route.ts` but no specific signup endpoint or Supabase client. This is a greenfield backend task. Complexity is driven by the need to combine data validation, database interaction, and custom business logic (unique code generation) within a single, robust API endpoint."
+		},
+		{
+			"taskId": 7,
+			"taskTitle": "Backend API: Stripe Setup Intent",
+			"complexityScore": 8,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the Stripe Setup Intent API endpoint. Create subtasks for: 1. Creating the `POST /api/stripe/setup-intent` route and initializing the Stripe Node.js client. 2. Implementing logic to look up the user in Supabase to check for an existing `stripe_customer_id`. 3. If no ID exists, creating a new Stripe Customer via the API and updating the user's record in Supabase with the new ID. 4. Creating a Stripe Setup Intent for the customer and returning its `client_secret`.",
+			"reasoning": "No Stripe-related API routes or client initializations exist. This is a complex greenfield backend task because it requires orchestrating calls between the application's database and the external Stripe service. The conditional logic (check-create-update) introduces multiple potential failure points that must be handled gracefully, making it high complexity."
+		},
+		{
+			"taskId": 8,
+			"taskTitle": "Implement Form Step 4: Stripe Payment Collection",
+			"complexityScore": 8,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Decompose the implementation of the Stripe payment collection form. Create subtasks for: 1. Building the 'Step 4' React component and wrapping its parent in Stripe's `Elements` provider. 2. Implementing the client-side logic to fetch the `client_secret` from the `/api/stripe/setup-intent` endpoint. 3. Integrating Stripe's `PaymentElement` and handling the form submission using `stripe.confirmSetup`. 4. On successful confirmation, making a final API call to update the user's payment status in Supabase.",
+			"reasoning": "No payment components exist. This is a highly complex, greenfield frontend task. Integrating Stripe Elements is non-trivial, requiring a multi-step asynchronous flow: fetching a secret from the backend (Task 7), mounting secure UI elements, handling submission via Stripe's specific hooks, and communicating the result back to the application server."
+		},
+		{
+			"taskId": 9,
+			"taskTitle": "Implement Confirmation & Referral Share Page (Step 5)",
+			"complexityScore": 5,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the creation of the confirmation/welcome page. Create subtasks for: 1. Creating a new page route (e.g., `/welcome`). 2. Implementing a server component or API route to securely fetch the signed-in user's data, including waitlist position and referral code. 3. Building the UI to display the user's stats and referral information. 4. Implementing client-side 'Copy Link' and social sharing functionality.",
+			"reasoning": "No such page exists. This is a greenfield task. The complexity is moderate. While the UI has interactive elements (copy/share), the main challenge is creating a new, secure page that fetches and displays user-specific data post-signup, which is more involved than a simple static page."
+		},
+		{
+			"taskId": 10,
+			"taskTitle": "Implement Referral Tracking Logic",
+			"complexityScore": 9,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Decompose the referral tracking and waitlist logic. Create subtasks for: 1. Modifying the `POST /api/signup` endpoint to validate an incoming `referred_by` code and find the referrer. 2. Upon valid referral, creating a new entry in the `referrals` table and incrementing the referrer's `referral_count`. 3. Designing and writing a Supabase database function (`recalculate_waitlist_positions`) that updates the `waitlist_position` for all users. 4. Creating a trigger or a scheduled job to execute the recalculation function.",
+			"reasoning": "This logic is entirely new. The complexity is very high because it involves two distinct and challenging parts: modifying a critical API path (signup) and implementing advanced database logic. Writing a performant SQL function to handle ranking based on multiple criteria is a difficult task, and setting up a cron job or trigger adds operational complexity."
+		}
+	]
+}
