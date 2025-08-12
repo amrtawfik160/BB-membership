@@ -14,10 +14,12 @@ export function Benefits() {
                         <span className="block text-[var(--color-primary-400)]">It's your advantage.</span>
                     </h2>
                     <p className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed mb-12">
-                        The Brickell Babes is the ultimate platform for ambitious, socially curious women who want it all: community, opportunity, and connection.
+                        The Brickell Babes is the ultimate platform for ambitious, socially curious women who want it all: community, opportunity, and
+                        connection.
                     </p>
                     <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-                        Whether you're launching your brand, changing careers, or simply looking to level up your circle, this is where high-vibe friendships and strategic networking meet.
+                        Whether you're launching your brand, changing careers, or simply looking to level up your circle, this is where high-vibe
+                        friendships and strategic networking meet.
                     </p>
                 </div>
 
@@ -40,9 +42,7 @@ export function Benefits() {
                         <h3 className="text-4xl md:text-5xl font-serif font-bold text-neutral-100 mb-6 leading-tight tracking-tight">
                             Level up your network
                         </h3>
-                        <p className="text-xl text-neutral-300 mb-10">
-                            We're not just brunch and beach days. BB is your unfair advantage.
-                        </p>
+                        <p className="text-xl text-neutral-300 mb-10">We're not just brunch and beach days. BB is your unfair advantage.</p>
 
                         {/* Features Grid */}
                         <div className="grid md:grid-cols-2 gap-6 mb-12">
