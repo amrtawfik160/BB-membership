@@ -3,6 +3,9 @@
 import HeroSection from './hero-section'
 import { Benefits } from './benefits'
 import { Membership } from './membership'
+import { Testimonials } from './testmonials'
+import { Footer } from './footer'
+import { WaitlistForm } from './waitlist-form'
 
 /**
  * Main Landing Page Component for BB Membership
@@ -14,6 +17,9 @@ export default function LandingPage() {
             <HeroSection />
             <Benefits />
             <Membership />
+            <Testimonials />
+            <WaitlistForm />
+            <Footer />
         </main>
     )
 }
