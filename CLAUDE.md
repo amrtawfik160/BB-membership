@@ -415,3 +415,287 @@ Based on the image you've shared and our previous conversation about the BB Memb
 This design matches the clean, soft aesthetic from your reference image while maintaining the functionality needed for your BB Membership waitlist. The layout prioritizes user engagement with clear progress visualization and easy referral sharing, perfect for driving the viral growth you want for your women's community platform.
 
 Would you like me to detail any specific component or adjust any aspect of this design?
+
+## The copywriting doc from the client:
+
+BB MEMBERSHIP WAITLIST LANDING PAGE
+This isn’t just your social life—it’s your success network.
+HERO SECTION
+Background Image: Elevated, high-energy group of women—maybe post-workout, at dinner, or laughing at a panel event. Diverse, ambitious, magnetic.
+Overlay Text (centered):
+BUILD YOUR BEST LIFE
+Through curated events, career connections, and powerful community.
+Your new circle starts here.
+CTA Button:
+[ Join the Waitlist ] — brand highlight color (pink)
+
+THIS ISN’T JUST A MEMBERSHIP. IT’S YOUR ADVANTAGE.
+The Brickell Babes is the ultimate platform for ambitious, socially curious women who want it all: community, opportunity, and connection.
+Whether you're launching your brand, changing careers, or simply looking to level up your circle, this is where high-vibe friendships and strategic networking meet.
+CTA Button: Explore Member Benefits
+
+WHAT CAN I EXPECT FROM THE WAITLIST?
+Due to demand, memberships are released in waves based on waitlist priority.
+There’s zero commitment to join.
+Referrals = Priority Access
+
+Share your unique link to move up the list and gain early access to exclusive programming.
+
+WHAT DOES MEMBERSHIP INCLUDE?
+
+1. BB CIRCUIT: SOCIAL + STRATEGIC EVENTS
+   Use your credits to unlock 8–12 curated experiences per month:
+   Rooftop happy hours & sculpting workouts
+   Curated networking dinners with founders, creatives, and execs
+   Finance & business talks (investing, Bitcoin, tax strategy, real estate, and entrepreneurship)
+   Wellness & Mindfulness sessions to recharge and reconnect
+   Think: ClassPass meets your dream mentor group.
+
+2. DIGITAL PLATFORM: YOUR PRIVATE NETWORK
+   Connect with women who get you in a safe, curated space:
+   Create a member profile (age, industry, neighborhood, interests)
+   Filter by job title, shared goals, or past event attendance
+   Direct chat with members pre/post events
+   Discover likeminded women (like Bumble BFF, but better)
+   Join subgroups: Women in Tech, Creators, Founders, Bitcoin Babes, New Moms
+   Community forum with anonymous posting + AI bot (Brickette)
+   Think: LinkedIn meets Reddit meets your group chat.
+
+3. PERKS: GIFTS, DEALS & PRIORITY ACCESS
+   Unlock hundreds in local & national value each month:
+   FITNESS
+   2 weeks unlimited at Pure Barre
+   5-class pack at OneTribe
+   1 week free at Legacy Fitness
+   1 week free at SoulCycle
+
+DINING & LIFESTYLE
+10% off at Maman
+15% off Carrot Express
+Free dessert/cocktail at Groot restaurants
+VIP booking at Riviera Dining Group spots
+BUSINESS & ENTREPRENEURSHIP
+Open up a free LLC with XYZ (a $298 value)
+1:1 startup legal consult or contract review (from a vetted partner law firm)
+Discount on trademark filing through a legal partner
+25% off business insurance setup
+6 months free of Canva Pro
+6 months free of Notion Plus
+20% off Squarespace
+1 month free of Flodesk
+BEAUTY & BRANDING
+Exclusive packages at Surface Level
+Media & content perks for business owners
+BB collab opportunities for tastemakers and creators
+Think: American Express perks, but made for your Miami lifestyle.
+
+LEVEL UP YOUR NETWORK
+We’re not just brunch and beach days. BB is your unfair advantage.
+Find a mentor.
+Meet future cofounders.
+Get your finances right.
+Build your brand with women who want to see you win.
+
+LET’S GET TO KNOW YOU
+Apply now to join the BB Membership waitlist.
+(No commitment. 3-month minimum if accepted.)
+[ Form Fields ]
+First Name
+Last Name
+Date of Birth
+Email
+Instagram Handle
+LinkedIn Link
+Age Range (dropdown)
+20s
+30s
+40s
+50s
+60s+
+Neighborhood (dropdown or text field)
+Brickell
+Coconut Grove
+Coral Gables
+Edgewater or Midtown
+South Beach
+Sunset Harbor
+Miami Beach
+Fort Lauderdale
+Boca Raton
+Palm Beach
+Other (please list)
+
+Occupation / Industry
+(blank text box)
+
+What are you most excited about?
+Social Events & Fitness
+Networking & Mentorship
+Business & Finance Talks
+Member Perks & Discounts
+
+✅ Checkbox:
+Keep me in the loop about events and early access.
+[ Join Waitlist Button ]
+
+👑 MEMBERSHIP TIERS (PREVIEW)
+Tier
+Monthly
+Credits
+Perks
+Basic
+$38
+1
+Access to events + platform
+Insider
+$68
+3
+Guest passes
+Tastemaker
+$148
+7
+Guest passes
+Founder
+$298
+Unlimited
+curated gift bag with annual contract
+
+📝 3-month minimum commitment required.
+
+💬 MEMBER REVIEWS
+“The women I’ve met here helped me launch my business. Literally.”
+– Danielle, 32, South Beach
+“Between the events, perks, and mentorship, I got more out of this than my MBA.”
+– Sam, 34, Downtown Miami
+“I found my people, my gym, and my dream client, all in the first month.”
+– Ava, 29, Brickell
+
+👣 FOOTER
+Learn: Waitlist Info | Events | Press
+About: Our Story | Join as an Ambassador | Partner With Us
+Support: FAQ | Contact
+Legal: Privacy Policy | Terms
+Newsletter Signup: [email field]
+Social Icons: Instagram | Facebook | LinkedIn
+
+----------------------------
+
+EXPLORE MEMBER BENEFITS
+Your life. Leveled up.
+Break this into clear, elevated categories — a mix of tangible perks and aspirational results.
+
+SOCIAL LIFE, REIMAGINED
+Say goodbye to awkward meetups and random group chats.
+Tap into a curated calendar of high-vibe, high-impact experiences built for connection.
+Monthly events you actually want to go to
+Boutique fitness, rooftop happy hours, and sculpting workouts
+Invite-only networking dinners and cofounder meetups
+Priority access to members-only activations
+Credit-based event system (like ClassPass but for your social life)
+Meet new friends, business partners, and workout buddies, all effortlessly.
+
+CAREER & BUSINESS SUPPORT
+Whether you’re pivoting, launching, or scaling—we’ve got you.
+Free or discounted LLC registration + biz formation support
+Legal + accounting partner perks (trademark help, bookkeeping, tax prep)
+Resume audits, LinkedIn refreshes, and job board access
+Personal branding & pitch deck templates
+Founder-specific group chats + visibility opportunities (podcasts, press, panels)
+Build your dream job, brand, or business—faster and with less friction.
+
+PERSONAL FINANCE & INVESTING
+Because financial confidence = freedom.
+Monthly talks on investing, budgeting, taxes, and entrepreneurship
+Bitcoin wallet setup & investing education
+Bookkeeping and accounting partner discounts
+Learn to manage your money like a CEO, even if you’re just getting started.
+
+PRIVATE DIGITAL PLATFORM
+Your curated network, one click away.
+Skip the noise of Facebook, WhatsApp, and Instagram DMs.
+Filtered member profiles by industry, age, vibe, and interests
+1:1 direct chat and pre/post-event threads
+Community forum with subgroups (Founders, Moms, Tech, Creators)
+Anonymous posting + AI-powered chat bot (Brickette)
+Create your digital calling card to get discovered + build trust
+Connect, collaborate, and grow without leaving the BB ecosystem.
+
+INSANE PERKS & VIP ACCESS
+Thousands in annual value. Miami-tested, member-approved.
+Discounted coffee, exclusive workouts, premium booking access
+Monthly perks at Miami’s best restaurants, gyms, and beauty spots
+Early access to collabs, retreats, and pop-ups
+Live like a local insider with a luxury twist.
+
+GROWTH THAT ACTUALLY STICKS
+This isn’t just about networking. It’s about becoming your best self.
+Events that inspire real connection, not just surface convos
+Wellness integrations: breathwork, mindset coaching, longevity workshops
+Branding yourself like a pro (with feedback from the BB community)
+Meet women who challenge, cheerlead, and connect you to your next move
+Optional accountability pods to help you hit personal + professional goals
+You don’t need a coach or another course. You need the right circle.
+
+Sample CTA:
+Whether you're new in town, entering your career-girl era, or ready to uplevel, Brickell Babes is here to help you find your people and build your path.
+
+----------------------
+
+HOW CREDITS WORK
+Think of credits as your passport to the BB experience.
+
+What Are Credits?
+Credits are the currency of your BB Membership.
+They give you access to curated events, experiences, and perks throughout the month — from sweat sessions and rooftop happy hours to professional dinners and private workshops.
+Every event has a credit value. You use your monthly credits to reserve your spot.
+
+What Kinds of Events Can I Use Them On?
+Credits can be used for:
+Credit Range
+Example Events
+1 Credit
+Happy hours, group fitness class, networking
+2 Credits
+Business workshops, lunch & learn series, experiences
+3–5 Credits
+Private dining experiences, VIP events
+
+Some events may allow guests with an extra credit or small upgrade fee.
+
+How Many Credits Do I Get?
+Tier
+Monthly Credits
+Highlights
+Basic
+1 Credit
+Access to core events & discounted add-ons
+Insider
+3 Credits
+Most popular tier — balance of fun + access
+Tastemaker
+7 Credits
+Guest passes + premium perks
+Founder
+Unlimited Credits
+All-access pass + VIP-only invites
+
+What If I Run Out of Credits?
+No stress — you can:
+Buy additional credits à la carte anytime
+Upgrade your membership tier for more included credits
+Use referral bonuses
+
+Do Credits Roll Over?
+Credits reset monthly on your billing date
+Unused credits do not roll over, but you can always upgrade for more flexibility
+
+Why Credits?
+Using credits keeps the experience flexible, fair, and rewarding.
+Whether you're in a social season or a recharge era, you’re never paying for what you don’t use.
+The more active you are, the more value you unlock.
+And you’ll always know exactly what you’re getting each month.
+
+BB Tip:
+Want to attend multiple events in one week? Choose a higher tier or plan ahead using your monthly drop.
+
+Popular events fill fast — book early and get rewarded.

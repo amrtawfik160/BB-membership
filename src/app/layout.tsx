@@ -1,20 +1,20 @@
-import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
 import { StripeProvider } from '@/components/providers'
+import type { Metadata } from 'next'
+import { Inter, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
-    variable: '--font-inter',
+const libreBaskerville = Libre_Baskerville({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700'],
     display: 'swap',
+    variable: '--font-libre-baskerville',
+    weight: ['400', '700'],
 })
 
-const poppins = Poppins({
-    variable: '--font-poppins',
+const inter = Inter({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700'],
     display: 'swap',
+    variable: '--font-inter',
+    weight: ['300', '400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="scroll-smooth">
-            <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+            <body className={`${libreBaskerville.variable} ${inter.variable} antialiased`}>
                 <StripeProvider>{children}</StripeProvider>
             </body>
         </html>

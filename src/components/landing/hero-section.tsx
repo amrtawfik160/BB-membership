@@ -1,56 +1,54 @@
 'use client'
 
-import Silk from '@Silk/Silk'
-import { PointerHighlight } from '@/components/ui/pointer-highlight'
 import { Button } from '@/components/ui/button'
+import { PointerHighlight } from '@/components/ui/pointer-highlight'
 
 /**
  * Hero Section Component for BB Membership Landing Page
  * Clean, minimal design inspired by Soho Beach House
  */
 export default function HeroSection() {
-    const scrollToForm = () => {
-        const formSection = document.getElementById('form-section')
-        if (formSection) {
-            formSection.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
-
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Silk Background */}
-            <div className="absolute inset-0">
-                <Silk color="#c8b58d" />
-            </div>
+            {/* Background Image */}
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: 'url(/images/background.png)',
+                }}
+            ></div>
 
             {/* Background overlay for text readability */}
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 bg-black/60 "></div>
 
             {/* Content Container */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center -mt-12">
                 <div className="space-y-12">
                     {/* Main Headline - Large and impactful */}
                     <div className="space-y-8">
-                        <h1 className="flex items-center !text-white flex-col !font-bold text-6xl md:text-8xl lg:text-9xl leading-none text-center max-w-6xl mx-auto tracking-tight">
+                        <h1 className="flex items-center !text-white flex-col !font-bold text-6xl md:text-8xl leading-none text-center max-w-6xl mx-auto tracking-tight">
                             BUILD YOUR
                             <br />
-                            <PointerHighlight rectangleClassName="bg-white/10 border-white/20" pointerClassName="text-[var(--cream)]">
-                                <span className="relative z-10">BEST LIFE</span>
+                            <PointerHighlight rectangleClassName="bg-white/10 !border-white/20" pointerClassName="text-[var(--color-primary-400)]">
+                                <span className="relative text-[var(--color-primary-400)] z-10">BEST LIFE</span>
                             </PointerHighlight>
                         </h1>
                     </div>
 
                     {/* Subheading with enhanced styling */}
-                    <div className="space-y-7 max-w-5xl mx-auto pt-5 text-white/80">
+                    <div className="space-y-5 max-w-5xl mx-auto text-white/80">
                         <p className="text-2xl md:text-3xl font-medium leading-tight text-center">
                             Through curated events, career connections, and powerful community.
                         </p>
-                        <p className="text-xl md:text-2xl font-medium leading-tight text-center">Your new circle starts here.</p>
+                        <p className="text-2xl md:text-3xl  font-medium leading-tight text-center">Your new circle starts here.</p>
                     </div>
 
                     {/* Enhanced CTA Section */}
-                    <div className="pt-10">
-                        <Button onClick={scrollToForm} className="text-xl font-bold px-12 py-5" size="xl" variant={'secondary'}>
+                    <div className="pt-3">
+                        <Button
+                            size="lg"
+                            className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)] px-10 py-4 text-lg font-semibold rounded-xl"
+                        >
                             Join the Waitlist
                         </Button>
                     </div>

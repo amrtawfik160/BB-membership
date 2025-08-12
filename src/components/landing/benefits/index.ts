@@ -1,0 +1,6 @@
+export { Benefits } from './benefits'
+export { BenefitCard } from './benefit-card'
+export { FeatureCard } from './feature-card'
+export { useBenefits } from './use-benefits'
+export { benefitsData, featuresData } from './benefits-data'
+export type { BenefitData, FeatureData } from './benefits-data'
