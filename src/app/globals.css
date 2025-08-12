@@ -136,12 +136,3 @@
 html {
     scroll-behavior: smooth;
 }
-
-/* Updated focus styles to match luxury theme */
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 2px solid #db8e94;
-    outline-offset: 2px;
-}

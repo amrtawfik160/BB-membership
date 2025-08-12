@@ -83,19 +83,17 @@ export function WaitlistForm() {
         <section className="py-12 px-4" style={{ backgroundColor: 'var(--pearl)' }}>
             <div className="max-w-2xl mx-auto">
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl flex items-center justify-center gap-3 md:text-4xl font-serif font-light text-neutral-800 mb-3 tracking-wide leading-tight">
-                        Let&apos;s get to
-                        <br />
-                        <span className="text-[var(--color-primary-500)]">know you</span>
+                    <h2 className="text-3xl md:text-5xl font-serif font-light text-neutral-800 mb-5 tracking-wide leading-tight">
+                        Let&apos;s get to <span className="text-[var(--color-primary-500)]">know you</span>
                     </h2>
-                    <p className="text-base text-neutral-600 mb-2 max-w-xl mx-auto font-light">Apply now to join the BB Membership waitlist.</p>
-                    <p className="text-sm text-neutral-500 mb-4 max-w-lg mx-auto font-light">(No commitment. 3-month minimum if accepted.)</p>
+                    <p className="text-lg text-neutral-600 mb-3 max-w-xl mx-auto font-light">Apply now to join the BB Membership waitlist.</p>
+                    <p className="text-base text-neutral-500 mb-4 max-w-lg mx-auto font-light">(No commitment. 3-month minimum if accepted.)</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl border border-neutral-200 space-y-6">
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 pb-2 border-b border-neutral-100">
-                            <div className="w-6 h-6 bg-pink-100 rounded-md flex items-center justify-center">
+                            <div className="w-6 h-6 bg-[var(--color-primary-100)] rounded-md flex items-center justify-center">
                                 <User className="w-3 h-3 text-[var(--color-primary-600)]" />
                             </div>
                             <h3 className="text-base font-serif font-medium text-neutral-900">Personal Information</h3>
@@ -194,11 +192,14 @@ export function WaitlistForm() {
                                         <SelectItem value="Brickell">Brickell</SelectItem>
                                         <SelectItem value="Coconut Grove">Coconut Grove</SelectItem>
                                         <SelectItem value="Coral Gables">Coral Gables</SelectItem>
-                                        <SelectItem value="Edgewater or Midtown">Edgewater/Midtown</SelectItem>
+                                        <SelectItem value="Edgewater or Midtown">Edgewater or Midtown</SelectItem>
                                         <SelectItem value="South Beach">South Beach</SelectItem>
+                                        <SelectItem value="Sunset Harbor">Sunset Harbor</SelectItem>
                                         <SelectItem value="Miami Beach">Miami Beach</SelectItem>
                                         <SelectItem value="Fort Lauderdale">Fort Lauderdale</SelectItem>
-                                        <SelectItem value="Other">Other</SelectItem>
+                                        <SelectItem value="Boca Raton">Boca Raton</SelectItem>
+                                        <SelectItem value="Palm Beach">Palm Beach</SelectItem>
+                                        <SelectItem value="Other (please list)">Other (please list)</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>
@@ -207,7 +208,7 @@ export function WaitlistForm() {
 
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 pb-2 border-b border-neutral-100">
-                            <div className="w-6 h-6 bg-pink-100 rounded-md flex items-center justify-center">
+                            <div className="w-6 h-6 rounded-md flex items-center justify-center bg-[var(--color-primary-100)]">
                                 <Briefcase className="w-3 h-3 text-[var(--color-primary-600)]" />
                             </div>
                             <h3 className="text-base font-serif font-medium text-neutral-900">Professional & Social</h3>
@@ -224,7 +225,7 @@ export function WaitlistForm() {
                                 onChange={handleChange}
                                 rows={2}
                                 placeholder="Your professional background..."
-                                className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm focus:border-[var(--color-primary-500)] focus:ring-1 focus:ring-pink-100 resize-none"
+                                className="w-full px-3 py-2 border border-neutral-200 bg-input/30 rounded-md text-sm focus:border-[var(--color-primary-500)] focus:ring-1 focus:ring-pink-100 resize-none"
                             />
                         </div>
 
@@ -261,7 +262,7 @@ export function WaitlistForm() {
 
                     <div className="space-y-3">
                         <div className="flex items-center gap-2 pb-2 border-b border-neutral-100">
-                            <div className="w-6 h-6 bg-pink-100 rounded-md flex items-center justify-center">
+                            <div className="w-6 h-6 bg-[var(--color-primary-100)] rounded-md flex items-center justify-center">
                                 <Heart className="w-3 h-3 text-[var(--color-primary-600)]" />
                             </div>
                             <h3 className="text-base font-serif font-medium text-neutral-900">What are you most excited about?</h3>
