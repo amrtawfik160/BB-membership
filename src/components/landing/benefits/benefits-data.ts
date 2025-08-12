@@ -16,19 +16,19 @@ export interface FeatureData {
 export const benefitsData: BenefitData[] = [
     {
         icon: Users,
-        title: 'BB CIRCUIT: SOCIAL + STRATEGIC EVENTS',
+        title: 'BB Circuit: Social + Strategic Events',
         description: 'Use your credits to unlock 8–12 curated experiences per month: Rooftop happy hours & sculpting workouts, networking dinners with founders, finance & business talks, wellness & mindfulness sessions.',
         tagline: 'Think: ClassPass meets your dream mentor group',
     },
     {
         icon: Globe,
-        title: 'DIGITAL PLATFORM: YOUR PRIVATE NETWORK',
+        title: 'Digital Platform: Your Private Network',
         description: 'Connect with women who get you in a safe, curated space. Create member profiles, filter by job title and goals, direct chat, discover likeminded women, join subgroups, community forum with AI bot (Brickette).',
         tagline: 'Think: LinkedIn meets Reddit meets your group chat',
     },
     {
         icon: Gift,
-        title: 'PERKS: GIFTS, DEALS & PRIORITY ACCESS',
+        title: 'Perks: Gifts, Deals & Priority Access',
         description: 'Unlock hundreds in local & national value each month. Fitness passes, dining discounts, business tools, beauty packages, BB collab opportunities.',
         tagline: 'Think: American Express perks, but made for your Miami lifestyle',
     },

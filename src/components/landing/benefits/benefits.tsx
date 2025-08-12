@@ -10,8 +10,8 @@ export function Benefits() {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-6xl font-serif font-bold text-neutral-800 mb-8 tracking-tight leading-tight">
-                        THIS ISN'T JUST A MEMBERSHIP.
-                        <span className="block text-[var(--color-primary-400)]">IT'S YOUR ADVANTAGE.</span>
+                        This isn't just a membership.
+                        <span className="block text-[var(--color-primary-400)]">It's your advantage.</span>
                     </h2>
                     <p className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed mb-12">
                         The Brickell Babes is the ultimate platform for ambitious, socially curious women who want it all: community, opportunity, and connection.
@@ -38,7 +38,7 @@ export function Benefits() {
                 <div className="bg-neutral-800 p-16 rounded-3xl relative overflow-hidden">
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <h3 className="text-4xl md:text-5xl font-serif font-bold text-neutral-100 mb-6 leading-tight tracking-tight">
-                            LEVEL UP YOUR NETWORK
+                            Level up your network
                         </h3>
                         <p className="text-xl text-neutral-300 mb-10">
                             We're not just brunch and beach days. BB is your unfair advantage.
