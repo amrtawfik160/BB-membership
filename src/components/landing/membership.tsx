@@ -7,8 +7,8 @@ export function Membership() {
             name: 'Basic',
             price: '$38',
             credits: '1',
-            description: 'Perfect for getting started',
-            features: ['Access to monthly networking events', 'Digital platform access', 'Community directory', 'Basic event notifications'],
+            description: 'Access to events + platform',
+            features: ['Access to events + platform'],
             popular: false,
             icon: Check,
             color: 'bg-stone-100',
@@ -21,10 +21,7 @@ export function Membership() {
             description: 'Most popular choice',
             features: [
                 'Everything in Basic',
-                '2 guest passes per month',
-                'Priority event booking',
-                'Exclusive member-only events',
-                'Early access to new features',
+                'Guest passes',
             ],
             popular: true,
             icon: Star,
@@ -38,11 +35,7 @@ export function Membership() {
             description: 'For the socially connected',
             features: [
                 'Everything in Insider',
-                '5 guest passes per month',
-                'Premium venue access',
-                'Quarterly exclusive dinners',
-                'Personal concierge support',
-                'VIP event seating',
+                'Guest passes',
             ],
             popular: false,
             icon: Sparkles,
@@ -53,15 +46,10 @@ export function Membership() {
             name: 'Founder',
             price: '$298',
             credits: 'Unlimited',
-            description: 'Ultimate networking experience',
+            description: 'Ultimate access',
             features: [
                 'Everything in Tastemaker',
-                'Unlimited guest passes',
-                'Private founder events',
-                'Quarterly curated gift bag',
-                'One-on-one founder access',
-                'Custom event planning',
-                'Annual retreat invitation',
+                'Curated gift bag with annual contract',
             ],
             popular: false,
             icon: Crown,
@@ -75,13 +63,9 @@ export function Membership() {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-6xl font-serif font-light text-stone-800 mb-6 tracking-wide">MEMBERSHIP TIERS</h2>
-                    <p className="text-xl text-stone-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
-                        Choose your level of access to Miami&apos;s most exclusive network of ambitious women
-                    </p>
+                    <h2 className="text-4xl md:text-6xl font-serif font-light text-stone-800 mb-6 tracking-wide">👑 Membership Tiers (Preview)</h2>
                     <div className="flex items-center justify-center gap-2 text-sm text-stone-500">
-                        <Calendar className="w-4 h-4" />
-                        <span>3-month minimum commitment • Cancel anytime after</span>
+                        <span>📝 3-month minimum commitment required.</span>
                     </div>
                 </div>
 
@@ -159,9 +143,6 @@ export function Membership() {
                 <div className="bg-white p-12 rounded-3xl border border-stone-200">
                     <div className="text-center mb-12">
                         <h3 className="text-3xl font-serif font-light text-stone-800 mb-4">What Can I Expect From The Waitlist?</h3>
-                        <p className="text-lg text-stone-600 max-w-2xl mx-auto font-light">
-                            Join thousands of ambitious women already on our exclusive waitlist
-                        </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-10">
@@ -169,9 +150,8 @@ export function Membership() {
                             <div className="w-20 h-20 bg-rose-200 rounded-3xl flex items-center justify-center mb-6 mx-auto">
                                 <Users className="w-10 h-10 text-rose-600" />
                             </div>
-                            <h4 className="text-xl font-serif font-medium text-stone-800 mb-4">Wave-Based Release</h4>
                             <p className="text-stone-600 leading-relaxed font-light">
-                                Memberships are released in carefully curated waves based on waitlist priority and community fit.
+                                Due to demand, memberships are released in waves based on waitlist priority.
                             </p>
                         </div>
 
@@ -179,9 +159,8 @@ export function Membership() {
                             <div className="w-20 h-20 bg-amber-100 rounded-3xl flex items-center justify-center mb-6 mx-auto">
                                 <Check className="w-10 h-10 text-amber-600" />
                             </div>
-                            <h4 className="text-xl font-serif font-medium text-stone-800 mb-4">Zero Commitment</h4>
                             <p className="text-stone-600 leading-relaxed font-light">
-                                There&apos;s absolutely zero commitment to join when your spot opens up. Decide when you&apos;re ready.
+                                There's zero commitment to join.
                             </p>
                         </div>
 
@@ -189,9 +168,9 @@ export function Membership() {
                             <div className="w-20 h-20 bg-stone-200 rounded-3xl flex items-center justify-center mb-6 mx-auto">
                                 <Gift className="w-10 h-10 text-stone-700" />
                             </div>
-                            <h4 className="text-xl font-serif font-medium text-stone-800 mb-4">Referral Priority</h4>
                             <p className="text-stone-600 leading-relaxed font-light">
-                                Share your unique referral link to move up the waitlist faster and gain early access to membership.
+                                Referrals = Priority Access<br />
+                                Share your unique link to move up the list and gain early access to exclusive programming.
                             </p>
                         </div>
                     </div>
