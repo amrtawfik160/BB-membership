@@ -11,8 +11,8 @@ export function Membership() {
             features: ['Access to events + platform'],
             popular: false,
             icon: Check,
-            color: 'bg-pink-50',
-            textColor: 'text-pink-700',
+            color: 'bg-stone-900',
+            textColor: 'text-white',
         },
         {
             name: 'Insider',
@@ -22,7 +22,7 @@ export function Membership() {
             features: ['Everything in Basic', 'Guest passes'],
             popular: true,
             icon: Star,
-            color: 'bg-[var(--color-primary-400)]',
+            color: 'bg-[var(--color-primary-500)]',
             textColor: 'text-white',
         },
         {
@@ -33,8 +33,8 @@ export function Membership() {
             features: ['Everything in Insider', 'Guest passes'],
             popular: false,
             icon: Sparkles,
-            color: 'bg-pink-100',
-            textColor: 'text-pink-800',
+            color: 'bg-stone-900',
+            textColor: 'text-white',
         },
         {
             name: 'Founder',
@@ -68,13 +68,13 @@ export function Membership() {
                             <div
                                 key={index}
                                 className={`relative p-8 rounded-3xl border transition-all duration-300 hover:scale-[1.02] ${
-                                    tier.popular ? 'border-[var(--color-primary-400)] bg-white' : 'border-stone-200 bg-white hover:border-stone-300'
+                                    tier.popular ? 'border-[var(--color-primary-500)] bg-white' : 'border-stone-200 bg-white hover:border-stone-300'
                                 }`}
                             >
                                 {/* Popular Badge */}
                                 {tier.popular && (
                                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                                        <span className="bg-[var(--color-primary-400)] text-white px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wide">
+                                        <span className="bg-[var(--color-primary-500)] text-white px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wide">
                                             Most Popular
                                         </span>
                                     </div>
@@ -119,7 +119,9 @@ export function Membership() {
                                     {/* CTA Button */}
                                     <Button
                                         className={`w-full py-4 rounded-2xl font-medium text-base transition-all duration-300 ${
-                                            tier.popular ? 'bg-[var(--color-primary-400)] text-white hover:bg-[var(--color-primary-500)]' : 'bg-stone-800 text-white hover:bg-stone-700'
+                                            tier.popular
+                                                ? 'bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]'
+                                                : 'bg-stone-800 text-white hover:bg-stone-700'
                                         }`}
                                     >
                                         Join Waitlist
@@ -147,15 +149,15 @@ export function Membership() {
                         </div>
 
                         <div className="text-center">
-                            <div className="w-20 h-20 bg-pink-100 rounded-3xl flex items-center justify-center mb-6 mx-auto">
-                                <Check className="w-10 h-10 text-pink-600" />
+                            <div className="w-20 h-20 bg-[var(--color-primary-200)] rounded-3xl flex items-center justify-center mb-6 mx-auto">
+                                <Check className="w-10 h-10 text-[var(--color-primary-600)]" />
                             </div>
                             <p className="text-stone-600 leading-relaxed font-light">There&apos;s zero commitment to join.</p>
                         </div>
 
                         <div className="text-center">
-                            <div className="w-20 h-20 bg-stone-200 rounded-3xl flex items-center justify-center mb-6 mx-auto">
-                                <Gift className="w-10 h-10 text-stone-700" />
+                            <div className="w-20 h-20 bg-[var(--color-primary-200)] rounded-3xl flex items-center justify-center mb-6 mx-auto">
+                                <Gift className="w-10 h-10 text-[var(--color-primary-600)]" />
                             </div>
                             <p className="text-stone-600 leading-relaxed font-light">
                                 Referrals = Priority Access
