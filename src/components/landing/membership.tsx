@@ -11,7 +11,7 @@ export function Membership() {
             features: ['Access to events + platform'],
             popular: false,
             icon: Check,
-            color: 'bg-stone-900',
+            color: 'bg-neutral-900',
             textColor: 'text-white',
         },
         {
@@ -33,7 +33,7 @@ export function Membership() {
             features: ['Everything in Insider', 'Guest passes'],
             popular: false,
             icon: Sparkles,
-            color: 'bg-stone-900',
+            color: 'bg-neutral-900',
             textColor: 'text-white',
         },
         {
@@ -44,7 +44,7 @@ export function Membership() {
             features: ['Everything in Tastemaker', 'Curated gift bag with annual contract'],
             popular: false,
             icon: Crown,
-            color: 'bg-stone-900',
+            color: 'bg-neutral-900',
             textColor: 'text-white',
         },
     ]
@@ -54,8 +54,8 @@ export function Membership() {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-6xl font-serif font-light text-stone-800 mb-8 tracking-wide">Membership Tiers</h2>
-                    <div className="flex items-center justify-center gap-2 text-xl text-stone-500">
+                    <h2 className="text-4xl md:text-6xl font-serif font-light text-neutral-800 mb-8 tracking-wide">Membership Tiers</h2>
+                    <div className="flex items-center justify-center gap-2 text-xl text-neutral-500">
                         <span>3-month minimum commitment required.</span>
                     </div>
                 </div>
@@ -68,7 +68,9 @@ export function Membership() {
                             <div
                                 key={index}
                                 className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 hover:scale-[1.02] h-full ${
-                                    tier.popular ? 'border-[var(--color-primary-500)] bg-white' : 'border-stone-200 bg-white hover:border-stone-300'
+                                    tier.popular
+                                        ? 'border-[var(--color-primary-500)] bg-white'
+                                        : 'border-neutral-200 bg-white hover:border-neutral-300'
                                 }`}
                             >
                                 {/* Popular Badge */}
@@ -87,29 +89,29 @@ export function Membership() {
                                     </div>
 
                                     {/* Tier Name & Description */}
-                                    <h3 className="text-2xl font-serif font-medium mb-2 text-stone-800">{tier.name}</h3>
-                                    <p className="text-sm text-stone-500 mb-6 font-light h-10">{tier.description}</p>
+                                    <h3 className="text-2xl font-serif font-medium mb-2 text-neutral-800">{tier.name}</h3>
+                                    <p className="text-sm text-neutral-500 mb-6 font-light h-10">{tier.description}</p>
 
                                     {/* Pricing */}
                                     <div className="mb-6">
-                                        <span className="text-5xl font-serif font-light text-stone-800">{tier.price}</span>
-                                        <span className="text-lg text-stone-500 font-light">/month</span>
+                                        <span className="text-5xl font-serif font-light text-neutral-800">{tier.price}</span>
+                                        <span className="text-lg text-neutral-500 font-light">/month</span>
                                     </div>
 
                                     {/* Credits */}
                                     <div className="mb-8 p-4 rounded-2xl" style={{ backgroundColor: 'var(--pearl)' }}>
                                         <div className="flex items-center justify-center gap-2">
                                             <Zap className="w-5 h-5 text-[var(--color-primary-400)]" />
-                                            <span className="text-xl font-serif font-medium text-stone-800">{tier.credits}</span>
-                                            <span className="text-sm text-stone-500 font-light">Credits</span>
+                                            <span className="text-xl font-serif font-medium text-neutral-800">{tier.credits}</span>
+                                            <span className="text-sm text-neutral-500 font-light">Credits</span>
                                         </div>
-                                        <p className="text-xs text-stone-400 mt-1 font-light">Use for events & experiences</p>
+                                        <p className="text-xs text-neutral-400 mt-1 font-light">Use for events & experiences</p>
                                     </div>
 
                                     {/* Features */}
                                     <ul className="space-y-3 mb-8 text-left flex-1 min-h-[80px]">
                                         {tier.features.map((feature, idx) => (
-                                            <li key={idx} className="text-sm flex items-start gap-3 text-stone-600">
+                                            <li key={idx} className="text-sm flex items-start gap-3 text-neutral-600">
                                                 <Check className="w-5 h-5 flex-shrink-0 text-[var(--color-primary-400)] mt-0.5" />
                                                 <span className="leading-relaxed font-light">{feature}</span>
                                             </li>
@@ -121,7 +123,7 @@ export function Membership() {
                                         className={`w-full py-4 rounded-2xl font-medium text-base transition-all duration-300 mt-auto ${
                                             tier.popular
                                                 ? 'bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]'
-                                                : 'bg-stone-800 text-white hover:bg-stone-700'
+                                                : 'bg-neutral-800 text-white hover:bg-neutral-700'
                                         }`}
                                     >
                                         Join Waitlist
@@ -133,35 +135,42 @@ export function Membership() {
                 </div>
 
                 {/* Waitlist Information */}
-                <div className="bg-white p-12 rounded-3xl border border-stone-200">
-                    <div className="text-center mb-12">
-                        <h3 className="text-3xl font-serif font-light text-stone-800 mb-4">What Can I Expect From The Waitlist?</h3>
+                <div className="bg-gradient-to-br bg-white p-16 rounded-3xl border border-neutral-300">
+                    <div className="text-center mb-16">
+                        <h3 className="text-4xl md:text-4xl font-serif font-light text-neutral-800 mb-2">What Can I Expect From The Waitlist?</h3>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-10">
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-[var(--color-primary-200)] rounded-3xl flex items-center justify-center mb-6 mx-auto">
-                                <Users className="w-10 h-10 text-[var(--color-primary-600)]" />
+                    <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                        <div className="group text-center">
+                            <div className="relative mb-8">
+                                <div className="relative w-24 h-24 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-primary-500)] rounded-3xl flex items-center justify-center mx-auto shadow-lg">
+                                    <Users className="w-12 h-12 text-white" />
+                                </div>
                             </div>
-                            <p className="text-stone-600 leading-relaxed font-light">
+                            <h4 className="text-lg font-semibold text-neutral-800 mb-3">Exclusive Waves</h4>
+                            <p className="text-neutral-600 leading-relaxed font-light px-4">
                                 Due to demand, memberships are released in waves based on waitlist priority.
                             </p>
                         </div>
 
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-[var(--color-primary-200)] rounded-3xl flex items-center justify-center mb-6 mx-auto">
-                                <Check className="w-10 h-10 text-[var(--color-primary-600)]" />
+                        <div className="group text-center">
+                            <div className="relative mb-8">
+                                <div className="relative w-24 h-24 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-primary-500)] rounded-3xl flex items-center justify-center mx-auto shadow-lg">
+                                    <Check className="w-12 h-12 text-white" />
+                                </div>
                             </div>
-                            <p className="text-stone-600 leading-relaxed font-light">There&apos;s zero commitment to join.</p>
+                            <h4 className="text-lg font-semibold text-neutral-800 mb-3">Zero Commitment</h4>
+                            <p className="text-neutral-600 leading-relaxed font-light px-4">There&apos;s zero commitment to join.</p>
                         </div>
 
-                        <div className="text-center">
-                            <div className="w-20 h-20 bg-[var(--color-primary-200)] rounded-3xl flex items-center justify-center mb-6 mx-auto">
-                                <Gift className="w-10 h-10 text-[var(--color-primary-600)]" />
+                        <div className="group text-center">
+                            <div className="relative mb-8">
+                                <div className="relative w-24 h-24 bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-primary-500)] rounded-3xl flex items-center justify-center mx-auto shadow-lg">
+                                    <Gift className="w-12 h-12 text-white" />
+                                </div>
                             </div>
-                            <p className="text-stone-600 leading-relaxed font-light">
-                                Referrals = Priority Access
-                                <br />
+                            <h4 className="text-lg font-semibold text-neutral-800 mb-3">Referrals = Priority Access</h4>
+                            <p className="text-neutral-600 leading-relaxed font-light px-4">
                                 Share your unique link to move up the list and gain early access to exclusive programming.
                             </p>
                         </div>
