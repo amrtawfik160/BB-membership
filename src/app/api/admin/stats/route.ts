@@ -42,9 +42,18 @@ export const GET = withAdminAuth(async (admin: any, request) => {
       console.error('Error getting referrals:', referralsError);
     }
 
-    // Calculate conversion rate (simplified - can be made more complex)
-    const conversionRate = totalUsers && totalUsers > 0 
-      ? Math.round(((totalReferrals || 0) / totalUsers) * 100)
+    // Calculate payment conversion rate
+    const { count: usersWithPayment, error: paymentError } = await supabase
+      .from('users')
+      .select('*', { count: 'exact', head: true })
+      .eq('payment_completed', true);
+
+    if (paymentError) {
+      console.error('Error getting payment data:', paymentError);
+    }
+
+    const paymentConversionRate = totalUsers && totalUsers > 0 
+      ? Math.round(((usersWithPayment || 0) / totalUsers) * 100)
       : 0;
 
     // Get top referrers
@@ -89,7 +98,7 @@ export const GET = withAdminAuth(async (admin: any, request) => {
       totalUsers: totalUsers || 0,
       todaySignups: todaySignups || 0,
       totalReferrals: totalReferrals || 0,
-      conversionRate,
+      conversionRate: paymentConversionRate,
       topReferrers: formattedTopReferrers,
       recentSignups: formattedRecentSignups,
     });

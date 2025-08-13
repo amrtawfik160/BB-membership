@@ -194,7 +194,7 @@ export default function AdminDashboard() {
                 <BarChart3 className="h-6 w-6 text-pink-600" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Conversion Rate</p>
+                <p className="text-sm font-medium text-gray-600">Payment Rate</p>
                 <p className="text-2xl font-bold text-gray-900">{stats.conversionRate}%</p>
               </div>
             </div>

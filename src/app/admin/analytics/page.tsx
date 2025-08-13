@@ -173,7 +173,7 @@ export default function AdminAnalyticsPage() {
               <div className="text-3xl font-bold text-[var(--color-primary-600)]">
                 {analytics.conversionFunnel.conversionRate}%
               </div>
-              <div className="text-sm text-gray-600 mt-1">Overall Rate</div>
+              <div className="text-sm text-gray-600 mt-1">Payment Rate</div>
             </div>
           </div>
         </div>
