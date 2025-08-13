@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Check, Crown, Gift, Sparkles, Star, Users, Zap } from 'lucide-react'
+import Link from 'next/link'
 
 export function Membership() {
     const tiers = [
@@ -55,8 +56,16 @@ export function Membership() {
                 {/* Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-6xl font-serif font-light text-neutral-800 mb-8 tracking-wide">Membership Tiers</h2>
-                    <div className="flex items-center justify-center gap-2 text-xl text-neutral-500">
-                        <span>3-month minimum commitment required.</span>
+                    <div className="flex flex-col items-center justify-center gap-3">
+                        <div className="flex items-center justify-center gap-2 text-xl text-neutral-500">
+                            <span>3-month minimum commitment required.</span>
+                        </div>
+                        <Link
+                            href="/credits"
+                            className="text-[var(--color-primary-500)] hover:text-[var(--color-primary-600)] underline underline-offset-4 text-lg mt-2"
+                        >
+                            How credits work
+                        </Link>
                     </div>
                 </div>
 

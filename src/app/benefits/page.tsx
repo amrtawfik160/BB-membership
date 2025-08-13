@@ -5,18 +5,10 @@ import Link from 'next/link'
 import {
     ArrowLeft,
     Calendar,
-    Users,
     TrendingUp,
-    Bitcoin,
-    MessageSquare,
-    Gift,
     Sparkles,
-    Heart,
     Network,
     Briefcase,
-    Shield,
-    Coffee,
-    Dumbbell,
     Crown,
 } from 'lucide-react'
 

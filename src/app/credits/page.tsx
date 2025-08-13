@@ -1,59 +1,46 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { ArrowLeft, Calendar, CreditCard, Crown, Lightbulb, RotateCcw, Star, Zap } from 'lucide-react'
 import Link from 'next/link'
-import { 
-    ArrowLeft, 
-    Zap, 
-    Calendar, 
-    Users, 
-    Coffee,
-    Briefcase,
-    Crown,
-    CreditCard,
-    TrendingUp,
-    RotateCcw,
-    Lightbulb,
-    Star
-} from 'lucide-react'
 
 export default function CreditsPage() {
     const creditTiers = [
         {
             name: 'Basic',
             credits: '1 Credit',
-            highlights: 'Access to core events & discounted add-ons'
+            highlights: 'Access to core events & discounted add-ons',
         },
         {
             name: 'Insider',
             credits: '3 Credits',
-            highlights: 'Most popular tier — balance of fun & access'
+            highlights: 'Most popular tier — balance of fun & access',
         },
         {
             name: 'Tastemaker',
             credits: '7 Credits',
-            highlights: 'Guest passes + premium perks'
+            highlights: 'Guest passes + premium perks',
         },
         {
             name: 'Founder',
             credits: 'Unlimited Credits',
-            highlights: 'All-access pass + VIP-only invites'
-        }
+            highlights: 'All-access pass + VIP-only invites',
+        },
     ]
 
     const eventTypes = [
         {
             credits: '1 Credit',
-            events: ['Happy hours', 'Group fitness class', 'Networking']
+            events: ['Happy hours', 'Group fitness class', 'Networking'],
         },
         {
             credits: '2 Credits',
-            events: ['Business workshops', 'Lunch & learn series', 'Experiences']
+            events: ['Business workshops', 'Lunch & learn series', 'Experiences'],
         },
         {
             credits: '3–5 Credits',
-            events: ['Private dining experiences', 'VIP events']
-        }
+            events: ['Private dining experiences', 'VIP events'],
+        },
     ]
 
     return (
@@ -61,10 +48,7 @@ export default function CreditsPage() {
             {/* Navigation */}
             <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-neutral-200">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link 
-                        href="/" 
-                        className="flex items-center gap-2 text-neutral-700 hover:text-neutral-900 transition-colors"
-                    >
+                    <Link href="/" className="flex items-center gap-2 text-neutral-700 hover:text-neutral-900 transition-colors">
                         <ArrowLeft className="w-4 h-4" />
                         <span className="text-sm font-medium">Back to Home</span>
                     </Link>
@@ -73,11 +57,9 @@ export default function CreditsPage() {
             </div>
 
             {/* Hero Section */}
-            <section className="py-24 px-6 bg-gradient-to-br from-neutral-50 to-yellow-50">
+            <section className="py-24 px-6 bg-gradient-to-br from-neutral-50 to-pink-50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-neutral-800 mb-8 tracking-tight leading-tight">
-                        How Credits Work
-                    </h1>
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-neutral-800 mb-8 tracking-tight leading-tight">How Credits Work</h1>
                     <p className="text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
                         Think of credits as your passport to the BB experience.
                     </p>
@@ -89,14 +71,17 @@ export default function CreditsPage() {
                 <div className="max-w-4xl mx-auto">
                     <div className="bg-white rounded-3xl p-12 shadow-sm border border-neutral-200 mb-16">
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center">
+                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-500)] flex items-center justify-center">
                                 <Zap className="w-8 h-8 text-white" />
                             </div>
                             <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-800">What Are Credits?</h2>
                         </div>
                         <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
                             <p>Credits are the currency of your BB Membership.</p>
-                            <p>They give you access to curated events, experiences, and perks throughout the month — from sweat sessions and rooftop happy hours to professional dinners and private workshops.</p>
+                            <p>
+                                They give you access to curated events, experiences, and perks throughout the month — from sweat sessions and rooftop
+                                happy hours to professional dinners and private workshops.
+                            </p>
                             <p>Every event has a credit value. You use your monthly credits to reserve your spot.</p>
                         </div>
                     </div>
@@ -107,32 +92,32 @@ export default function CreditsPage() {
             <section className="py-16 px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-12 justify-center">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--color-primary-300)] to-[var(--color-primary-400)] flex items-center justify-center">
                             <Calendar className="w-8 h-8 text-white" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-800">What Kinds of Events Can I Use Them On?</h2>
                     </div>
-                    
+
                     <p className="text-lg text-neutral-600 text-center mb-12">Credits can be used for:</p>
 
                     <div className="grid md:grid-cols-3 gap-8 mb-12">
                         {eventTypes.map((type, index) => (
                             <div key={index} className="bg-neutral-50 rounded-2xl p-8 text-center">
-                                <div className="bg-gradient-to-r from-purple-400 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 inline-block">
+                                <div className="bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-500)] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 inline-block">
                                     {type.credits}
                                 </div>
                                 <div className="space-y-3">
                                     {type.events.map((event, idx) => (
-                                        <p key={idx} className="text-neutral-700">{event}</p>
+                                        <p key={idx} className="text-neutral-700">
+                                            {event}
+                                        </p>
                                     ))}
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    <p className="text-center text-neutral-600 italic">
-                        Some events may allow guests with an extra credit or small upgrade fee.
-                    </p>
+                    <p className="text-center text-neutral-600 italic">Some events may allow guests with an extra credit or small upgrade fee.</p>
                 </div>
             </section>
 
@@ -140,7 +125,7 @@ export default function CreditsPage() {
             <section className="py-16 px-6">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center gap-4 mb-12 justify-center">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-400 to-blue-500 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] flex items-center justify-center">
                             <Crown className="w-8 h-8 text-white" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-800">How Many Credits Do I Get?</h2>
@@ -164,7 +149,7 @@ export default function CreditsPage() {
                     {/* What If I Run Out */}
                     <div className="bg-neutral-50 rounded-3xl p-8">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-green-500 flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-500)] flex items-center justify-center">
                                 <CreditCard className="w-6 h-6 text-white" />
                             </div>
                             <h3 className="text-2xl font-serif font-bold text-neutral-800">What If I Run Out of Credits?</h3>
@@ -172,15 +157,15 @@ export default function CreditsPage() {
                         <p className="text-lg text-neutral-600 mb-4">No stress — you can:</p>
                         <ul className="space-y-2 text-neutral-700">
                             <li className="flex items-start gap-3">
-                                <div className="w-2 h-2 rounded-full bg-green-400 mt-3 flex-shrink-0" />
+                                <div className="w-2 h-2 rounded-full bg-[var(--color-primary-400)] mt-3 flex-shrink-0" />
                                 <span>Buy additional credits à la carte anytime</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <div className="w-2 h-2 rounded-full bg-green-400 mt-3 flex-shrink-0" />
+                                <div className="w-2 h-2 rounded-full bg-[var(--color-primary-400)] mt-3 flex-shrink-0" />
                                 <span>Upgrade your membership tier for more included credits</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <div className="w-2 h-2 rounded-full bg-green-400 mt-3 flex-shrink-0" />
+                                <div className="w-2 h-2 rounded-full bg-[var(--color-primary-400)] mt-3 flex-shrink-0" />
                                 <span>Use referral bonuses</span>
                             </li>
                         </ul>
@@ -189,7 +174,7 @@ export default function CreditsPage() {
                     {/* Do Credits Roll Over */}
                     <div className="bg-neutral-50 rounded-3xl p-8">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-orange-400 to-orange-500 flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[var(--color-primary-300)] to-[var(--color-primary-400)] flex items-center justify-center">
                                 <RotateCcw className="w-6 h-6 text-white" />
                             </div>
                             <h3 className="text-2xl font-serif font-bold text-neutral-800">Do Credits Roll Over?</h3>
@@ -201,18 +186,18 @@ export default function CreditsPage() {
                     </div>
 
                     {/* Why Credits */}
-                    <div className="bg-gradient-to-br from-pink-50 to-neutral-50 rounded-3xl p-8">
+                    <div className="bg-gradient-to-br from-[var(--color-primary-50)] to-neutral-50 rounded-3xl p-8">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-500)] flex items-center justify-center">
                                 <Star className="w-6 h-6 text-white" />
                             </div>
                             <h3 className="text-2xl font-serif font-bold text-neutral-800">Why Credits?</h3>
                         </div>
                         <div className="space-y-4 text-lg text-neutral-600">
                             <p>Using credits keeps the experience flexible, fair, and rewarding.</p>
-                            <p>Whether you're in a social season or a recharge era, you're never paying for what you don't use.</p>
+                            <p>Whether you&apos;re in a social season or a recharge era, you&apos;re never paying for what you don&apos;t use.</p>
                             <p>The more active you are, the more value you unlock.</p>
-                            <p>And you'll always know exactly what you're getting each month.</p>
+                            <p>And you&apos;ll always know exactly what you&apos;re getting each month.</p>
                         </div>
                     </div>
                 </div>
@@ -223,7 +208,7 @@ export default function CreditsPage() {
                 <div className="max-w-4xl mx-auto">
                     <div className="bg-[var(--color-primary-50)] border-l-4 border-[var(--color-primary-400)] rounded-2xl p-8">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-400 to-pink-500 flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-500)] flex items-center justify-center">
                                 <Lightbulb className="w-6 h-6 text-white" />
                             </div>
                             <h3 className="text-2xl font-serif font-bold text-neutral-800">BB Tip:</h3>
@@ -237,14 +222,12 @@ export default function CreditsPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 px-6 bg-gradient-to-br from-yellow-50 to-neutral-50">
+            <section className="py-24 px-6 bg-gradient-to-br from-[var(--color-primary-50)] to-neutral-50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-neutral-800 mb-8 leading-tight">
-                        Ready to start earning credits?
-                    </h2>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-neutral-800 mb-8 leading-tight">Ready to start earning credits?</h2>
                     <Link href="/">
-                        <Button 
-                            size="xl" 
+                        <Button
+                            size="xl"
                             className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)] px-12 py-4 text-lg font-semibold rounded-2xl"
                         >
                             Join the Waitlist
