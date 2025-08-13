@@ -47,7 +47,9 @@ export default function AdminAnalyticsPage() {
   const loadAnalytics = async () => {
     try {
       setLoading(true)
-      const response = await fetch(`/api/admin/analytics?range=${dateRange}`)
+      const response = await fetch(`/api/admin/analytics?range=${dateRange}`, {
+        credentials: 'include'
+      })
       
       if (response.ok) {
         const data = await response.json()

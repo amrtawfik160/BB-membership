@@ -81,9 +81,9 @@ export async function setAdminSessionCookie(token: string) {
   cookieStore.set(COOKIE_NAME, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    sameSite: 'lax',
     maxAge: SESSION_DURATION / 1000, // Convert to seconds
-    path: '/admin',
+    path: '/',
   });
 }
 

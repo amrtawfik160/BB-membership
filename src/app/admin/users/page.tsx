@@ -59,7 +59,9 @@ export default function AdminUsersPage() {
   const loadUsers = async () => {
     try {
       setLoading(true)
-      const response = await fetch('/api/admin/users')
+      const response = await fetch('/api/admin/users', {
+        credentials: 'include'
+      })
       
       if (response.ok) {
         const data = await response.json()
@@ -76,7 +78,9 @@ export default function AdminUsersPage() {
 
   const exportUsers = async () => {
     try {
-      const response = await fetch('/api/admin/export')
+      const response = await fetch('/api/admin/export', {
+        credentials: 'include'
+      })
       
       if (response.ok) {
         const blob = await response.blob()

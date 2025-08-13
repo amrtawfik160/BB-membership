@@ -1,19 +1,18 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { 
-  Users, 
-  Mail, 
-  TrendingUp, 
-  CreditCard,
+import { Button } from '@/components/ui/button'
+import {
   BarChart3,
   Download,
   LogOut,
+  Mail,
+  RefreshCw,
   Shield,
-  RefreshCw
+  TrendingUp,
+  Users
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 interface DashboardStats {
   totalUsers: number
@@ -47,7 +46,9 @@ export default function AdminDashboard() {
 
   const checkAuth = async () => {
     try {
-      const response = await fetch('/api/admin/auth')
+      const response = await fetch('/api/admin/auth', {
+        credentials: 'include'
+      })
       if (response.ok) {
         const data = await response.json()
         if (data.authenticated) {
@@ -67,7 +68,9 @@ export default function AdminDashboard() {
   const loadDashboardData = async () => {
     try {
       setLoading(true)
-      const response = await fetch('/api/admin/stats')
+      const response = await fetch('/api/admin/stats', {
+        credentials: 'include'
+      })
       
       if (response.ok) {
         const data = await response.json()
@@ -85,7 +88,8 @@ export default function AdminDashboard() {
   const handleLogout = async () => {
     try {
       const response = await fetch('/api/admin/auth', {
-        method: 'DELETE'
+        method: 'DELETE',
+        credentials: 'include'
       })
       
       if (response.ok) {

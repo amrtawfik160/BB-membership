@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     const token = createAdminToken(email);
     
     // Set session cookie
-    setAdminSessionCookie(token);
+    await setAdminSessionCookie(token);
     
     // Record successful login
     recordLoginAttempt(ip, true);
@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
 // Logout endpoint
 export async function DELETE(request: NextRequest) {
   try {
-    clearAdminSession();
+    await clearAdminSession();
     
     return NextResponse.json({
       success: true,
