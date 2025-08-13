@@ -5,7 +5,7 @@ import { Benefits } from './benefits'
 import { Membership } from './membership'
 import { Testimonials } from './testmonials'
 import { Footer } from './footer'
-import { WaitlistForm } from './waitlist-form'
+import { WaitlistFormWrapper } from './waitlist-form-wrapper'
 
 /**
  * Main Landing Page Component for BB Membership
@@ -18,7 +18,7 @@ export default function LandingPage() {
             <Benefits />
             <Membership />
             <Testimonials />
-            <WaitlistForm />
+            <WaitlistFormWrapper />
             <Footer />
         </main>
     )

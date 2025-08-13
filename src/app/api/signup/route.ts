@@ -217,6 +217,27 @@ export async function POST(request: NextRequest) {
         });
     }
     
+    // Send welcome email (don't fail signup if email fails)
+    try {
+      if (process.env.RESEND_API_KEY) {
+        await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/email/send`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'welcome',
+            userId: newUser.id,
+            firstName: newUser.first_name,
+            email: newUser.email,
+            waitlistPosition: newUser.waitlist_position,
+            referralCode: newUser.referral_code,
+          }),
+        });
+      }
+    } catch (emailError) {
+      // Log email error but don't fail the signup
+      console.error('Failed to send welcome email:', emailError);
+    }
+
     // Return success response with user data
     return NextResponse.json({
       success: true,
