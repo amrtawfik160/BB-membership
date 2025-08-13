@@ -125,6 +125,7 @@ export function Membership() {
                                                 ? 'bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]'
                                                 : 'bg-neutral-800 text-white hover:bg-neutral-700'
                                         }`}
+                                        onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
                                     >
                                         Join Waitlist
                                     </Button>

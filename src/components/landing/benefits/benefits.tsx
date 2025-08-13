@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { BenefitCard } from './benefit-card'
 import { FeatureCard } from './feature-card'
 import { benefitsData, featuresData } from './benefits-data'
+import Link from 'next/link'
 
 export function Benefits() {
     return (
@@ -52,9 +53,11 @@ export function Benefits() {
                         </div>
 
                         {/* CTA Button */}
-                        <Button size="xl" className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]">
-                            Explore Member Benefits
-                        </Button>
+                        <Link href="/benefits">
+                            <Button size="xl" className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)]">
+                                Explore Member Benefits
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

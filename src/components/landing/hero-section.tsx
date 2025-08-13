@@ -45,6 +45,7 @@ export default function HeroSection() {
                         <Button
                             size="lg"
                             className="bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)] px-10 py-4 text-lg font-semibold rounded-xl"
+                            onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Join the Waitlist
                         </Button>

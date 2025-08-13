@@ -36,7 +36,9 @@ export function WaitlistFormWrapper() {
     return (
         <Elements stripe={stripePromise}>
             <Suspense fallback={<WaitlistFormFallback />}>
-                <WaitlistForm />
+                <div id="waitlist-form">
+                    <WaitlistForm />
+                </div>
             </Suspense>
         </Elements>
     )
